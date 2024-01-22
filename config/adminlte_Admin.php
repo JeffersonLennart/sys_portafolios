@@ -15,7 +15,7 @@ return [
     */
 
     'title' => 'AdminLTE 3',
-    'title_prefix' => 'Revisor | ',
+    'title_prefix' => 'Admin | ',
     'title_postfix' => '',
 
     /*
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Panel de Revisor</b>',
+    'logo' => '<b>Panel de Admin</b>',
     'logo_img' => 'favicons/favicon.ico',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'favicons/favicon.ico',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'favicons/favicon.ico',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => true,
-    'dashboard_url' => 'revisores.index',
+    'dashboard_url' => 'admins.index',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -303,20 +303,85 @@ return [
 
         // Sidebar items:
         [
-            'text' => 'Revisar Portafolio',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-clipboard-list',
-        ],  
+            'text'    => 'USUARIOS',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Docentes',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-chalkboard-teacher',
+                ],
+                [
+                    'text' => 'Revisores',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-user-tie',
+                ],
+            ],
+        ],
         [
-            'text' => 'Historial de Revisiones',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-history',
-        ],  
+            'text'    => 'CARGA ACADÉMICA',
+            'icon'    => 'fas fa-fw fa-book-open',
+            'submenu' => [
+                [
+                    'text' => 'Escuela',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-school',
+                ],
+                [
+                    'text' => 'General',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-university',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'PORTAFOLIOS',
+            'icon'    => 'fas fa-fw fa-clipboard-list',
+            'submenu' => [
+                [
+                    'text' => 'Sin Revisar',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-clipboard',
+                ],
+                [
+                    'text' => 'Revisados',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-clipboard-check',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'OPERACIONES',
+            'icon'    => 'fas fa-fw fa-bars',
+            'submenu' => [
+                [
+                    'text'    => 'INFORMES',
+                    'icon'    => 'fas fa-fw fa-file-alt',
+                    'submenu' => [
+                        [
+                            'text' => 'Sin Enviar',
+                            'url'  => 'admin/settings',
+                            'icon' => 'fas fa-fw fa-mail-bulk',
+                        ],
+                        [
+                            'text' => 'Enviados',
+                            'url'  => 'admin/settings',
+                            'icon' => 'fas fa-fw fa-paper-plane',
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'Asignar Roles',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-users-cog',
+                ],
+            ],
+        ],            
         [
             'text' => 'Ajustes de la Cuenta',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-wrench',
-        ],  
+        ],        
     ],
 
     /*

@@ -303,6 +303,11 @@ return [
 
         // Sidebar items:        
         [
+            'text' => 'Inicio',
+            'route'  => 'docentes.index',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        [
             'text' => 'Carga Académica',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
@@ -325,7 +330,7 @@ return [
         ],
         [
             'text' => 'Ajustes de la Cuenta',
-            'url'  => 'admin/settings',
+            'route'  => 'profileDocente.edit',
             'icon' => 'fas fa-fw fa-wrench',
         ],     
     ],

@@ -13,14 +13,14 @@
         <div class="mt-4">
             <x-input-label for="codigo" :value="__('Código')" />
             <x-text-input id="codigo" class="block mt-1 w-full" type="text" name="codigo" :value="old('codigo')" autofocus autocomplete="codigo" />
-            <x-input-error :messages="$errors->all()" class="mt-2" />
+            <x-input-error :messages="$errors->get('codigo')" class="mt-2" />
         </div>
 
         <!-- Teléfono -->
         <div class="mt-4">
             <x-input-label for="telefono" :value="__('Teléfono')" />
             <x-text-input id="telefono" class="block mt-1 w-full" type="text" name="telefono" :value="old('telefono')" autofocus autocomplete="telefono" />
-            <x-input-error :messages="$errors->all()" class="mt-2" />
+            <x-input-error :messages="$errors->get('telefono')" class="mt-2" />
         </div>
 
 
@@ -44,7 +44,7 @@
                 <option value="JP-10H" {{ old('categoria') == 'JP-10H' ? 'selected' : '' }}>JP-10H</option>
                 <option value="JP-20H" {{ old('categoria') == 'JP-20H' ? 'selected' : '' }}>JP-20H</option>
             </x-select>
-            <x-input-error :messages="$errors->all()" class="mt-2" />
+            <x-input-error :messages="$errors->get('categoria')" class="mt-2" />
         </div>
         
         <!-- Grado Académico -->
@@ -55,7 +55,7 @@
                 <option value="Magister" {{ old('grado_academico') == 'Magister' ? 'selected' : '' }}>Magister</option>
                 <option value="Doctor" {{ old('grado_academico') == 'Doctor' ? 'selected' : '' }}>Doctor</option>
             </x-select>
-            <x-input-error :messages="$errors->all()" class="mt-2" />
+            <x-input-error :messages="$errors->get('grado_academico')" class="mt-2" />
         </div>
         
         <!-- Email Address -->

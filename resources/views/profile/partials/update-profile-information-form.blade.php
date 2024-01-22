@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile'.session('rol').'.update') }}" class="mt-6 space-y-6">
         @csrf
         @method('patch')
 
@@ -47,6 +47,52 @@
             @endif
         </div>
 
+        <div>
+            <x-input-label for="codigo" :value="__('Código')" />
+            <x-text-input id="codigo" name="codigo" type="text" class="mt-1 block w-full" :value="old('codigo', $user->codigo)" required autofocus autocomplete="codigo" />
+            <x-input-error class="mt-2" :messages="$errors->get('codigo')" />
+        </div>
+
+        <div>
+            <x-input-label for="telefono" :value="__('Teléfono')" />
+            <x-text-input id="telefono" name="telefono" type="text" class="mt-1 block w-full" :value="old('telefono', $user->telefono)" required autofocus autocomplete="telefono" />
+            <x-input-error class="mt-2" :messages="$errors->get('telefono')" />
+        </div>
+
+        <div class="mt-4">
+            <x-input-label for="categoria" :value="__('Categoría')" />
+            <x-select id="categoria" name="categoria" class="block mt-1 w-full" required>
+                <?php $defaultCategoria = $user->categoria ?? old('categoria'); ?>
+                <option value="PR-DE" {{ $defaultCategoria == 'PR-DE' ? 'selected' : '' }}>PR-DE</option>
+                <option value="PR-TC" {{ $defaultCategoria == 'PR-TC' ? 'selected' : '' }}>PR-TC</option>
+                <option value="AS-DE" {{ $defaultCategoria == 'AS-DE' ? 'selected' : '' }}>AS-DE</option>
+                <option value="AS-TC" {{ $defaultCategoria == 'AS-TC' ? 'selected' : '' }}>AS-TC</option>
+                <option value="AS-TP" {{ $defaultCategoria == 'AS-TP' ? 'selected' : '' }}>AS-TP</option>
+                <option value="AUX-TC" {{ $defaultCategoria == 'AUX-TC' ? 'selected' : '' }}>AUX-TC</option>
+                <option value="AUX-TP 10H" {{ $defaultCategoria == 'AUX-TP 10H' ? 'selected' : '' }}>AUX-TP 10H</option>
+                <option value="A1" {{ $defaultCategoria == 'A1' ? 'selected' : '' }}>A1</option>
+                <option value="B1" {{ $defaultCategoria == 'B1' ? 'selected' : '' }}>B1</option>
+                <option value="B2" {{ $defaultCategoria == 'B2' ? 'selected' : '' }}>B2</option>
+                <option value="B3" {{ $defaultCategoria == 'B3' ? 'selected' : '' }}>B3</option>
+                <option value="JP-20H" {{ $defaultCategoria == 'JP-20H' ? 'selected' : '' }}>JP-20H</option>
+                <option value="JP-TC" {{ $defaultCategoria == 'JP-TC' ? 'selected' : '' }}>JP-TC</option>
+                <option value="JP-10H" {{ $defaultCategoria == 'JP-10H' ? 'selected' : '' }}>JP-10H</option>
+                <option value="JP-20H" {{ $defaultCategoria == 'JP-20H' ? 'selected' : '' }}>JP-20H</option>
+            </x-select>
+            <x-input-error :messages="$errors->get('categoria')" class="mt-2" />
+        </div>
+
+        <div class="mt-4">
+            <x-input-label for="grado_academico" :value="__('Grado Académico')" />
+            <x-select id="grado_academico" name="grado_academico" class="block mt-1 w-full" required>
+                <?php $defaultGradoAcademico = $user->grado_academico ?? old('grado_academico'); ?>
+                <option value="Ingeniero" {{ $defaultGradoAcademico == 'Ingeniero' ? 'selected' : '' }}>Ingeniero</option>
+                <option value="Magister" {{ $defaultGradoAcademico == 'Magister' ? 'selected' : '' }}>Magister</option>
+                <option value="Doctor" {{ $defaultGradoAcademico == 'Doctor' ? 'selected' : '' }}>Doctor</option>
+            </x-select>
+            <x-input-error :messages="$errors->get('grado_academico')" class="mt-2" />
+        </div>        
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
@@ -55,7 +101,7 @@
                     x-data="{ show: true }"
                     x-show="show"
                     x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
+                    x-init="setTimeout(() => show = false, 5000)"
                     class="text-sm text-gray-600 dark:text-gray-400"
                 >{{ __('Saved.') }}</p>
             @endif

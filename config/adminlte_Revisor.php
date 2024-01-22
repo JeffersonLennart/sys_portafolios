@@ -303,6 +303,11 @@ return [
 
         // Sidebar items:
         [
+            'text' => 'Inicio',
+            'route'  => 'revisores.index',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        [
             'text' => 'Revisar Portafolio',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-clipboard-list',
@@ -314,7 +319,7 @@ return [
         ],  
         [
             'text' => 'Ajustes de la Cuenta',
-            'url'  => 'admin/settings',
+            'route'  => 'profileRevisor.edit',
             'icon' => 'fas fa-fw fa-wrench',
         ],  
     ],

@@ -303,6 +303,11 @@ return [
 
         // Sidebar items:
         [
+            'text' => 'Inicio',
+            'route'  => 'admins.index',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        [
             'text'    => 'USUARIOS',
             'icon'    => 'fas fa-fw fa-user',
             'submenu' => [
@@ -379,7 +384,7 @@ return [
         ],            
         [
             'text' => 'Ajustes de la Cuenta',
-            'url'  => 'admin/settings',
+            'route'  => 'profileAdmin.edit',
             'icon' => 'fas fa-fw fa-wrench',
         ],        
     ],

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\User;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 
@@ -62,5 +63,21 @@ class AdminController extends Controller
     public function destroy(Admin $admin)
     {
         //
+    }
+
+     # Función para llamar a asingarRoles
+     public function asignarRoles()
+     {
+        $users = User::orderBy('id', 'asc')->get();
+        return view('admins.asignarRoles',compact('users'));
+     }
+
+     # Función para cambiar el rol de un Docente
+    public function updateRole(UpdateAdminRequest $request)
+    {
+        $user = User::find($request->id);
+        $user->rol = $request->rol;
+        $user->save();           
+        return redirect()->route('admins.asignarRoles');        
     }
 }

@@ -49,13 +49,13 @@
 
         <div>
             <x-input-label for="codigo" :value="__('Código')" />
-            <x-text-input id="codigo" name="codigo" type="text" class="mt-1 block w-full" :value="old('codigo', $user->codigo)" required autofocus autocomplete="codigo" />
+            <x-text-input id="codigo" name="codigo" type="text" class="mt-1 block w-full" :value="old('codigo', $user->codigo)" autofocus autocomplete="codigo" />
             <x-input-error class="mt-2" :messages="$errors->get('codigo')" />
         </div>
 
         <div>
             <x-input-label for="telefono" :value="__('Teléfono')" />
-            <x-text-input id="telefono" name="telefono" type="text" class="mt-1 block w-full" :value="old('telefono', $user->telefono)" required autofocus autocomplete="telefono" />
+            <x-text-input id="telefono" name="telefono" type="text" class="mt-1 block w-full" :value="old('telefono', $user->telefono)" autofocus autocomplete="telefono" />
             <x-input-error class="mt-2" :messages="$errors->get('telefono')" />
         </div>
 

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AdminController;
+use App\Models\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,9 @@ Route::middleware(['auth','role:Admin'])->group(function () {
     # Rutas para editar el perfil admin
     Route::get('admins/profile', [ProfileController::class, 'editAdmin'])->name('profileAdmin.edit');
     Route::patch('admins/profile', [ProfileController::class, 'updateAdmin'])->name('profileAdmin.update');
+    
+    Route::get('admins/asignar_roles', [AdminController::class, 'asignarRoles'])->name('admins.asignarRoles');
+    Route::put('admins/asignar_roles', [AdminController::class, 'updateRole'])->name('admins.updateRole');
 
     # Rutas para la gestión de admins
     Route::resource('admins', AdminController::class);    

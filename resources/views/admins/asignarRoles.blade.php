@@ -9,6 +9,7 @@
 @stop
 
 @section('content')
+
 <table id="tabla" class="table">
     <thead>
         <tr>

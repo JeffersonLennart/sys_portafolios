@@ -308,12 +308,17 @@ return [
             'icon' => 'fas fa-fw fa-home',
         ],
         [
+            'text' => 'Semestre',
+            'route'  => 'admins.index',
+            'icon' => 'fas fa-fw fa-calendar',
+        ],
+        [
             'text'    => 'USUARIOS',
             'icon'    => 'fas fa-fw fa-user',
             'submenu' => [
                 [
                     'text' => 'Docentes',
-                    'url'  => 'admin/settings',
+                    'route'  => 'admins.indexDocente',
                     'icon' => 'fas fa-fw fa-chalkboard-teacher',
                 ],
                 [

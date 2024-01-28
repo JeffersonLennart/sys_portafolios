@@ -309,7 +309,7 @@ return [
         ],
         [
             'text' => 'Semestre',
-            'route'  => 'admins.dashboard',
+            'route'  => 'semestres.index',
             'icon' => 'fas fa-fw fa-calendar',
         ],
         [

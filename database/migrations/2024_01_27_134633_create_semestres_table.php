@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre', 20);
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
-            $table->enum('estado', ['Activo', 'Terminado']);
+            $table->enum('estado', ['Activo', 'Terminado','Suspendido']);
             $table->timestamps();
         });
     }

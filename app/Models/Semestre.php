@@ -9,6 +9,13 @@ class Semestre extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nombre',
+        'fecha_inicio',
+        'fecha_fin',
+        'estado',        
+    ];
+
     // Relación uno a muchos con asignación docente-revisor
     public function asignacionesDocenteRevisor(){
         return $this->hasMany('App\Models\DocenteRevisor');

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SemestreController;
 use App\Models\Admin;
 
 /*
@@ -73,6 +74,7 @@ Route::middleware(['auth','role:Admin'])->group(function () {
         Route::resources([
             'docentes' => DocenteController::class,
             'revisores' => RevisorController::class,
+            'semestres' => SemestreController::class,
         ]);
     });
 });

@@ -20,7 +20,7 @@ class DocenteController extends Controller
 
     /*
         *******************************************************************
-            CONTROLADORES PARA EL CRUD PARA DOCENTES EN EL PANEL DE ADMIN
+            CONTROLADORES PARA EL CRUD DE DOCENTES EN EL PANEL DE ADMIN
         *******************************************************************
     */
 

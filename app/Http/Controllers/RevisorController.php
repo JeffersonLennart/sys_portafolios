@@ -21,7 +21,7 @@ class RevisorController extends Controller
 
     /*
         *******************************************************************
-            CONTROLADORES PARA EL CRUD PARA REVISORES EN EL PANEL DE ADMIN
+            CONTROLADORES PARA EL CRUD DE REVISORES EN EL PANEL DE ADMIN
         *******************************************************************
     */
 

@@ -11,7 +11,7 @@ class StoreSemestreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class StoreSemestreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'fecha_inicio' => 'required|date',
+            'fecha_fin' => 'required|date|before:fecha_inicio',
+            'estado' => 'required|in:Activo,Terminado,Suspendido',
+        ];
+    }
+
+    public function messages(){
+        return[
+            'fecha_fin.before' => 'La fecha de fin no puede ser menor que la fecha de inicio',
+            'estado.in' => 'El estado solo puede ser Activo, Terminado o Suspendido',
         ];
     }
 }

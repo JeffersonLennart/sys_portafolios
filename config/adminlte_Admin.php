@@ -385,6 +385,11 @@ return [
                     'route'  => 'admins.asignarRoles',
                     'icon' => 'fas fa-fw fa-users-cog',
                 ],
+                [
+                    'text' => 'Asignar Revisores',
+                    'route'  => 'revisor_docentes.index',
+                    'icon' => 'fas fa-fw fa-users',
+                ],
             ],
         ],            
         [

@@ -63,7 +63,7 @@ class RevisorController extends Controller
         $revisor->user_id = $user->id;
         $revisor->save();
 
-        return redirect()->route('revisores.index')->with('mensaje', 'Revisor agregado con exito');
+        return redirect()->route('revisores.index')->with('mensaje', 'El Revisor '.$revisor->id.' ha sido agregado con exito');
     }
 
     // Mostrar datos del Revisor en el CRUD
@@ -94,13 +94,13 @@ class RevisorController extends Controller
             'grado_academico' => $request->grado_academico,
         ]);
 
-        return redirect()->route('revisores.index')->with('mensaje', 'Revisor modificado con exito');
+        return redirect()->route('revisores.index')->with('mensaje', 'El Revisor '.$revisore->id.' ha sido modificado con exito');
     }
 
     // Eliminar Revisor
     public function destroy(Revisor $revisore)
     {
         User::find($revisore->user_id)->delete();
-        return back()->with('mensaje', 'Revisor eliminado con exito');
+        return back()->with('mensaje', 'El Revisor '.$revisore->id.' ha sido eliminado con exito');
     }
 }

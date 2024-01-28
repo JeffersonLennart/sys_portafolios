@@ -33,33 +33,53 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth','role:Docente'])->group(function () {
-    # Rutas para editar el perfil docente
+
+    // Ruta para el inicio del panel de Docente
+    Route::get('docentes', [DocenteController::class, 'index'])->name('docentes.index');
+
+    // Rutas para editar el perfil docente
     Route::get('docentes/profile', [ProfileController::class, 'editDocente'])->name('profileDocente.edit');
     Route::patch('docentes/profile', [ProfileController::class, 'updateDocente'])->name('profileDocente.update');
 
-    # Rutas para la gestión de docentes
-    Route::resource('docentes', DocenteController::class);    
+    // Rutas para la gestión de docentes
+    // Route::resource('docentes', DocenteController::class);    
 });
 
 Route::middleware(['auth','role:Revisor'])->group(function () {
-    # Rutas para editar el perfil revisor
-    Route::get('revisores/profile', [ProfileController::class, 'editRevisor'])->name('profileRevisor.edit');
-    Route::patch('revisores/profile', [ProfileController::class, 'updateRevisor'])->name('profileRevisor.update');
 
-    # Rutas para la gestión de revisores
-    Route::resource('revisores', RevisorController::class);    
+    // Ruta para el inicio del panel de Revisor
+    Route::get('revisores', [RevisorController::class, 'index'])->name('revisores.index');
+
+    // Rutas para editar el perfil revisor
+    Route::get('revisores/profile', [ProfileController::class, 'editRevisor'])->name('profileRevisor.edit');
+    Route::patch('revisores/profile', [ProfileController::class, 'updateRevisor'])->name('profileRevisor.update');    
+
+    // Rutas para la gestión de revisores
+    // Route::resource('revisores', RevisorController::class);    
 });
 
 Route::middleware(['auth','role:Admin'])->group(function () {
-    # Rutas para editar el perfil admin
+
+    // Rutas para editar el perfil admin
     Route::get('admins/profile', [ProfileController::class, 'editAdmin'])->name('profileAdmin.edit');
     Route::patch('admins/profile', [ProfileController::class, 'updateAdmin'])->name('profileAdmin.update');
     
+    // Ruta para el inicio del panel de admin
+    Route::get('admins', [AdminController::class, 'index'])->name('admins.index');
+
+    // Rutas para la asignación de roles
     Route::get('admins/asignar_roles', [AdminController::class, 'asignarRoles'])->name('admins.asignarRoles');
     Route::put('admins/asignar_roles', [AdminController::class, 'updateRole'])->name('admins.updateRole');
-
-    # Rutas para la gestión de admins
-    Route::resource('admins', AdminController::class);    
+    
+    // Rutas para el CRUD de Docentes
+    Route::get('admins/docentes', [AdminController::class, 'indexDocente'])->name('admins.indexDocente');
+    Route::post('admins/docentes', [AdminController::class, 'storeDocente'])->name('admins.storeDocente');
+    Route::get('admins/docentes/create', [AdminController::class, 'createDocente'])->name('admins.createDocente');
+    Route::get('admins/docentes/{docente}', [AdminController::class, 'showDocente'])->name('admins.showDocente');
+    Route::put('admins/docentes/{docente}', [AdminController::class, 'updateDocente'])->name('admins.updateDocente');
+    Route::delete('admins/docentes/{docente}', [AdminController::class, 'destroyDocente'])->name('admins.destroyDocente');
+    Route::get('admins/docentes/{docente}/edit', [AdminController::class, 'editDocente'])->name('admins.editDocente');
+    // Route::resource('admins', AdminController::class);    
 });
 
 

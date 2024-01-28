@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('revisors', function (Blueprint $table) {
+        Schema::create('asignaturas', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
-            $table->boolean('es_presidente')->default(0);                     
-
+            $table->string('nombre', 200);
+            $table->enum('tipo', ['teorica', 'teorica_practica', 'practica'])->notNullable();
+            $table->string('codigo', 50);
+            $table->string('escuela', 200);
+            $table->string('categoria', 10);
+            $table->integer('creditos');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('revisors');
+        Schema::dropIfExists('asignaturas');
     }
 };

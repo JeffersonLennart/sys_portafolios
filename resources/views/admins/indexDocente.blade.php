@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Asignar Roles')
+@section('title', 'Docentes')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-<h1 class="text-center"><b>Asignación de Roles a Docentes</b></h1>
+<h1 class="text-center"><b>Registro de Docentes</b></h1>
 @stop
 
 @section('content')

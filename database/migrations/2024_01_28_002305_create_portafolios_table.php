@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('revisors', function (Blueprint $table) {
+        Schema::create('portafolios', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
-            $table->boolean('es_presidente')->default(0);                     
+            $table->unsignedBigInteger('carga_academica_id')->unique();
+            $table->enum('tipo_portafolio', ['teorico', 'practico'])->notNullable();
+
+            $table->foreign('carga_academica_id')->references('id')->on('carga_academicas')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('revisors');
+        Schema::dropIfExists('portafolios');
     }
 };

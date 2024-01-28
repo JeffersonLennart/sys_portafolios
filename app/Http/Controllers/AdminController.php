@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Docente;
 use App\Models\User;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
@@ -17,58 +18,53 @@ class AdminController extends Controller
         return view('admins.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    // Mostrar Docentes
+    public function indexDocente()
+    {
+        $docentes = Docente::orderBy('id', 'asc')->get();
+        return view('admins.indexDocente',compact('docentes'));
+    }
+
+    // Mostra la pagina de crear Docente
+    public function createDocente()
+    {
+        
+    }
+
+    // Almacenar el Docente
+    public function storeDocente(StoreAdminRequest $request)
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreAdminRequest $request)
+    // Mostrar datos del Docente en el CRUD
+    public function showDocente(Docente $docente)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Admin $admin)
+    // Muestra la vista para editar el docente 
+    public function editDocente(Docente $docente)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Admin $admin)
+    // Para el Editar de Docente
+    public function updateDocente(UpdateAdminRequest $request, Docente $docente)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateAdminRequest $request, Admin $admin)
+    // Eliminar Docente
+    public function destroyDocente(Docente $docente)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Admin $admin)
-    {
-        //
+        
     }
 
      # Función para llamar a asingarRoles
      public function asignarRoles()
      {
-        $users = User::orderBy('id', 'asc')->get();
+        $users = User::all();
         return view('admins.asignarRoles',compact('users'));
      }
 

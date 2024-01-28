@@ -47,9 +47,21 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    // Agregar imagen perfil
     public function adminlte_image()
     {
         return asset('images/profile.png');
     }
 
+    // Relación uno a muchos con docentes
+    public function docentes(){
+        return $this->hasMany('App\Models\Docente');
+    }
+
+    // Relación uno a muchos con revisores
+    public function revisors(){
+        return $this->hasMany('App\Models\Revisor');
+    }
+
+    
 }

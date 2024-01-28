@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => true,
-    'dashboard_url' => 'admins.index',
+    'dashboard_url' => 'admins.dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -304,12 +304,12 @@ return [
         // Sidebar items:
         [
             'text' => 'Inicio',
-            'route'  => 'admins.index',
+            'route'  => 'admins.dashboard',
             'icon' => 'fas fa-fw fa-home',
         ],
         [
             'text' => 'Semestre',
-            'route'  => 'admins.index',
+            'route'  => 'admins.dashboard',
             'icon' => 'fas fa-fw fa-calendar',
         ],
         [
@@ -318,12 +318,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Docentes',
-                    'route'  => 'admins.indexDocente',
+                    'route'  => 'docentes.index',
                     'icon' => 'fas fa-fw fa-chalkboard-teacher',
                 ],
                 [
                     'text' => 'Revisores',
-                    'url'  => 'admin/settings',
+                    'route'  => 'revisores.index',
                     'icon' => 'fas fa-fw fa-user-tie',
                 ],
             ],

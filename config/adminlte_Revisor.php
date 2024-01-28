@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => true,
-    'dashboard_url' => 'revisores.index',
+    'dashboard_url' => 'revisores.dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -304,7 +304,7 @@ return [
         // Sidebar items:
         [
             'text' => 'Inicio',
-            'route'  => 'revisores.index',
+            'route'  => 'revisores.dashboard',
             'icon' => 'fas fa-fw fa-home',
         ],
         [

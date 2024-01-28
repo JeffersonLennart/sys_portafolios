@@ -25,6 +25,7 @@ class User extends Authenticatable
         'codigo',
         'categoria',
         'grado_academico',
+        'rol',
     ];
 
     /**

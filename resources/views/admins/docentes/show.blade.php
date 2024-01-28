@@ -41,7 +41,7 @@
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('admins.indexDocente') }}">Volver</a>
+                <a class="btn btn-secondary" href="{{ route('docentes.index') }}">Volver</a>
             </div>
 
         </div>

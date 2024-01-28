@@ -15,86 +15,16 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function dashboard()
     {
         return view('admins.index');
     }
 
-    // Mostrar Docentes
-    public function indexDocente()
-    {
-        // Todos los usuarios son docentes
-        $docentes = User::all();
-        return view('admins.indexDocente',compact('docentes'));
-    }
-
-    // Mostra la pagina de crear Docente
-    public function createDocente()
-    {
-        return view('admins.createDocente');
-    }
-
-    // Almacenar el Docente
-    public function storeDocente(StoreDocenteRequest $request)
-    {        
-        // Crear Usuario
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'telefono' => $request->telefono,
-            'codigo' => $request->codigo,
-            'categoria' => $request->categoria,
-            'grado_academico' => $request->grado_academico,
-        ]);
-
-        // Crear Docente
-        $docente = new Docente;
-        $docente->user_id = $user->id;
-        $docente->save();
-
-        return redirect()->route('admins.indexDocente')->with('mensaje', 'Docente agregado con exito');
-    }
-
-    // Mostrar datos del Docente en el CRUD
-    public function showDocente(Docente $docente)
-    {
-        $docente = User::find($docente->user_id);
-
-        return view('admins.showDocente', compact('docente'));
-    }
-
-    // Muestra la vista para editar el docente 
-    public function editDocente(Docente $docente)
-    {
-        $docente = User::find($docente->user_id);
-        return view('admins.editDocente', compact('docente'));
-    }
-
-    // Para el Editar de Docente
-    public function updateDocente(UpdateDocenteRequest $request, Docente $docente)
-    {
-        $user = User::find($docente->user_id);
-        // Actualizar docente
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'telefono' => $request->telefono,
-            'codigo' => $request->codigo,
-            'categoria' => $request->categoria,
-            'grado_academico' => $request->grado_academico,
-        ]);
-
-        return redirect()->route('admins.indexDocente')->with('mensaje', 'Docente modificado con exito');
-    }
-
-    // Eliminar Docente
-    public function destroyDocente(Docente $docente)
-    {
-        User::find($docente->user_id)->delete();
-        return back()->with('mensaje', 'Docente eliminado con exito');
-    }
-
+    /*
+        **************************************************
+            CONTROLADORES PARA LA ASIGNACIÓN DE ROLES
+        ****************************************************
+    */
      # Función para llamar a asingarRoles
      public function asignarRoles()
      {
@@ -153,4 +83,5 @@ class AdminController extends Controller
         
         return redirect()->route('admins.asignarRoles');        
     }
+    
 }

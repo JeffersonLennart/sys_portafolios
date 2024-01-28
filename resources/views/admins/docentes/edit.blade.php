@@ -10,7 +10,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('admins.updateDocente', $docente) }}" method="POST">
+        <form action="{{ route('docentes.update', $docente) }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -93,7 +93,7 @@
 
             <div class="text-center" >                
                 <input type="submit" value="Editar Docente" class="btn btn-primary">             
-                <a href="{{ route('admins.indexDocente') }}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{ route('docentes.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

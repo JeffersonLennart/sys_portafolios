@@ -17,7 +17,7 @@
 @endif
 
 <div class="card-header">
-  <a href="{{ route('admins.createDocente') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Docente</b></a>
+  <a href="{{ route('docentes.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Docente</b></a>
 </div>
 
 <table id="tabla" class="table">
@@ -45,9 +45,9 @@
                 <td>{{ $docente->grado_academico }}</td>                
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('admins.showDocente', $docente) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('admins.editDocente', $docente) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('admins.destroyDocente', $docente) }}">
+                    <a href="{{ route('docentes.show', $docente) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                    <a href="{{ route('docentes.edit', $docente) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
+                      <form method="POST" action="{{ route('docentes.destroy', $docente) }}">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

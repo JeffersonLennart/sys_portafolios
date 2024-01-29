@@ -11,7 +11,7 @@ class SemestreController extends Controller
 
    /*
         *******************************************************************
-            CONTROLADORES PARA EL CRUD DE SEMESTRE EN EL PANEL DE ADMIN
+            FUNCIONES PARA EL CRUD DE SEMESTRE EN EL PANEL DE ADMIN
         *******************************************************************
     */
 
@@ -33,14 +33,14 @@ class SemestreController extends Controller
     public function store(StoreSemestreRequest $request)
     {        
         // Crear Semestre (Para que funciones importante en el Modelo de semestre los campos deben estar en $fillable)
-        $user = Semestre::create([
-            'nombre' => $request->nombre,
-            'fecha_inicio' => $request->fecha_inicio,            
-            'fecha_fin' => $request->fecha_fin,
-            'estado' => $request->estado,            
-        ]);
+        $semestre = Semestre::create([
+                    'nombre' => $request->nombre,
+                    'fecha_inicio' => $request->fecha_inicio,            
+                    'fecha_fin' => $request->fecha_fin,
+                    'estado' => $request->estado,            
+                    ]);
 
-        return redirect()->route('semestres.index')->with('mensaje', 'Semestre agregado con exito');
+        return redirect()->route('semestres.index')->with('mensaje', 'El Semestre '.$semestre->id.' ha sido agregado con exito');
     }
 
     // Mostrar datos del Semestre
@@ -61,22 +61,22 @@ class SemestreController extends Controller
     // Para el Editar de Semestre
     public function update(UpdateSemestreRequest $request, Semestre $semestre)
     {
-        $user = Semestre::find($semestre->id);
+        $semestre = Semestre::find($semestre->id);
         // Actualizar semestre
-        $user->update([
+        $semestre->update([
             'nombre' => $request->nombre,
             'fecha_inicio' => $request->fecha_inicio,            
             'fecha_fin' => $request->fecha_fin,
             'estado' => $request->estado,    
         ]);
 
-        return redirect()->route('semestres.index')->with('mensaje', 'Semestre modificado con exito');
+        return redirect()->route('semestres.index')->with('mensaje', 'El Semestre '.$semestre->id.' ha sido modificado con exito');
     }
 
     // Eliminar Semestre
     public function destroy(Semestre $semestre)
     {
         Semestre::find($semestre->id)->delete();
-        return back()->with('mensaje', 'Semestre eliminado con exito');
+        return back()->with('mensaje', 'El Semestre '.$semestre->id.' ha sido eliminado con exito');
     }   
 }

@@ -309,7 +309,7 @@ return [
         ],
         [
             'text' => 'Carga Académica',
-            'url'  => 'admin/settings',
+            'route'  => 'docentes.cargaAcademica',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -318,12 +318,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Enviar Portafolio',
-                    'url'  => 'admin/settings',
+                    'route'  => 'docentes.enviarPortafolio',
                     'icon' => 'fas fa-fw fa-paper-plane',
                 ],
                 [
                     'text' => 'Revisados',
-                    'url'  => 'admin/settings',
+                    'route'  => 'docentes.portafoliosRevisados',
                     'icon' => 'fas fa-fw fa-clipboard-check',
                 ],
             ],

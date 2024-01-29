@@ -10,6 +10,11 @@ class DocenteRevisor extends Model
     use HasFactory;
     protected $table = 'docente_revisor';
 
+    protected $fillable = [
+        'docente_id',
+        'revisor_id',
+        'semestre_id',             
+    ];
     // Relación uno a muchos con Semestre (inversa)
     public function semestre(){
         return $this->belongsTo('App\Models\Semestre');

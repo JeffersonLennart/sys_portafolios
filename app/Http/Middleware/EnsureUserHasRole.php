@@ -22,22 +22,14 @@ class EnsureUserHasRole
         $rol_actual = $request->session()->get('rol');
 
         // Verificar si la ruta a la que quiere acceder corresonde con el rol con el que esta logeado
-        if($rol_actual === $rol){
+        if($rol_actual === $rol && str_contains(auth()->user()->rol, $rol)){
             Config::set('adminlte', require config_path("adminlte_{$rol}.php"));
             return $next($request); 
         }
         
-        // Si no lo corresponde, logearlo a su dashboard correspondiente
-        // switch($rol_actual){
-        //     case "Docente":                
-        //         return redirect()->intended(RouteServiceProvider::HOME_DOCENTE);      
-        //     case "Revisor":                
-        //         return redirect()->intended(RouteServiceProvider::HOME_REVISOR);                                      
-        //     case "Admin":                
-        //         return redirect()->intended(RouteServiceProvider::HOME_ADMIN);                                      
-        // }
-
-        // Esto también es valido porque internamente lo maneja el middleware guest
+        // Si el usuario esta autenticado, le damos logout
+        if (auth()->check()) 
+            auth()->logout();        
         return redirect('login');
     }
 }

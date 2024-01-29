@@ -20,7 +20,7 @@ class DocenteController extends Controller
 
     /*
         *******************************************************************
-            CONTROLADORES PARA EL CRUD DE DOCENTES EN EL PANEL DE ADMIN
+            FUNCIONES PARA EL CRUD DE DOCENTES EN EL PANEL DE ADMIN
         *******************************************************************
     */
 
@@ -57,7 +57,7 @@ class DocenteController extends Controller
         $docente->user_id = $user->id;
         $docente->save();
 
-        return redirect()->route('docentes.index')->with('mensaje', 'Docente agregado con exito');
+        return redirect()->route('docentes.index')->with('mensaje', 'El Docente '.$docente->id.' ha sido agregado con exito');
     }
 
     // Mostrar datos del Docente en el CRUD
@@ -89,14 +89,38 @@ class DocenteController extends Controller
             'grado_academico' => $request->grado_academico,
         ]);
 
-        return redirect()->route('docentes.index')->with('mensaje', 'Docente modificado con exito');
+        return redirect()->route('docentes.index')->with('mensaje', 'El Docente '.$docente->id.' ha sido modificado con exito');
     }
 
     // Eliminar Docente
     public function destroy(Docente $docente)
     {
         User::find($docente->user_id)->delete();
-        return back()->with('mensaje', 'Docente eliminado con exito');
+        return back()->with('mensaje', 'El Docente '.$docente->id.' ha sido eliminado con exito');
     }   
+
+
+     /*
+        *********************************************
+            OTRAS FUNCIONES DEL PANEL DE DOCENTE
+        *********************************************
+    */
+
+    // Función para mostrar carga academica del docente
+    public function cargaAcademica(){
+
+    }
+
+
+    // Función para enviar un portafolio (debe seleccionar de que carga academica desea enviar el portafolio)
+    public function enviarPortafolio(){
+
+    }
+
+    // Función para mostrar los portafolios revisados
+    public function portafoliosRevisados(){
+
+    }
+
 
 }

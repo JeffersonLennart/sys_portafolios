@@ -23,14 +23,14 @@ class StoreSemestreRequest extends FormRequest
     {
         return [
             'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date|before:fecha_inicio',
+            'fecha_fin' => 'required|date|after:fecha_inicio',
             'estado' => 'required|in:Activo,Terminado,Suspendido',
         ];
     }
 
     public function messages(){
         return[
-            'fecha_fin.before' => 'La fecha de fin no puede ser menor que la fecha de inicio',
+            'fecha_fin.after' => 'La fecha de fin debe ser mayor que la fecha de inicio',
             'estado.in' => 'El estado solo puede ser Activo, Terminado o Suspendido',
         ];
     }

@@ -333,13 +333,18 @@ return [
             'icon'    => 'fas fa-fw fa-book-open',
             'submenu' => [
                 [
+                    'text' => 'Asignatura',
+                    'route'  => 'asignaturas.index',
+                    'icon' => 'fas fa-fw fa-book',
+                ],
+                [
                     'text' => 'Escuela',
-                    'url'  => 'admin/settings',
+                    'route'  => 'admins.cargaAcademicaEscuela',
                     'icon' => 'fas fa-fw fa-school',
                 ],
                 [
                     'text' => 'General',
-                    'url'  => 'admin/settings',
+                    'route'  => 'carga_academicas.index',
                     'icon' => 'fas fa-fw fa-university',
                 ],
             ],
@@ -350,12 +355,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Sin Revisar',
-                    'url'  => 'admin/settings',
+                    'route'  => 'portafolios.index',
                     'icon' => 'fas fa-fw fa-clipboard',
                 ],
                 [
                     'text' => 'Revisados',
-                    'url'  => 'admin/settings',
+                    'route'  => 'revisiones.index',
                     'icon' => 'fas fa-fw fa-clipboard-check',
                 ],
             ],
@@ -370,12 +375,12 @@ return [
                     'submenu' => [
                         [
                             'text' => 'Sin Enviar',
-                            'url'  => 'admin/settings',
+                            'route'  => 'admins.informeSinEnviar',
                             'icon' => 'fas fa-fw fa-mail-bulk',
                         ],
                         [
                             'text' => 'Enviados',
-                            'url'  => 'admin/settings',
+                            'route'  => 'informes.index',
                             'icon' => 'fas fa-fw fa-paper-plane',
                         ],
                     ],
@@ -384,6 +389,11 @@ return [
                     'text' => 'Asignar Roles',
                     'route'  => 'admins.asignarRoles',
                     'icon' => 'fas fa-fw fa-users-cog',
+                ],
+                [
+                    'text' => 'Asignar Revisores',
+                    'route'  => 'revisor_docentes.index',
+                    'icon' => 'fas fa-fw fa-users',
                 ],
             ],
         ],            

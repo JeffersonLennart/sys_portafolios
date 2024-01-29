@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Revisores')
+@section('title', 'Semestres')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Revisores</b></h1>
+  <h1 class="text-center"><b>Registro de Semestres</b></h1>
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
 @endif
 
 <div class="card-header">
-  <a href="{{ route('revisores.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Revisor</b></a>
+  <a href="{{ route('semestres.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Semestre</b></a>
 </div>
 
 <table id="tabla" class="table">
@@ -25,29 +25,25 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Email</th>
-            <th>Teléfono</th>                
-            <th>Código</th>                
-            <th>Categoria</th>                
-            <th>Grado Académico</th>                
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>                
+            <th>Estado</th>                                   
             <th>Acciones</th>                
         </tr>
     </thead>
     <tbody>
-        @foreach ($revisores as $revisor)
+        @foreach ($semestres as $semestre)
             <tr>
-                <td>{{ $revisor->id }}</td>
-                <td>{{ $revisor->user->name }}</td>
-                <td>{{ $revisor->user->email }}</td>
-                <td>{{ $revisor->user->telefono }}</td>
-                <td>{{ $revisor->user->codigo }}</td>
-                <td>{{ $revisor->user->categoria }}</td>                
-                <td>{{ $revisor->user->grado_academico }}</td>                
+                <td>{{ $semestre->id }}</td>
+                <td>{{ $semestre->nombre }}</td>
+                <td>{{ $semestre->fecha_inicio }}</td>
+                <td>{{ $semestre->fecha_fin }}</td>
+                <td>{{ $semestre->estado }}</td>           
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('revisores.show', $revisor) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('revisores.edit', $revisor) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('revisores.destroy', $revisor) }}">
+                    <a href="{{ route('semestres.show', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                    <a href="{{ route('semestres.edit', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
+                      <form method="POST" action="{{ route('semestres.destroy', $semestre) }}">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

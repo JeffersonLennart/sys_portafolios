@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => true,
-    'dashboard_url' => 'docentes.index',
+    'dashboard_url' => 'docentes.dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -304,12 +304,12 @@ return [
         // Sidebar items:        
         [
             'text' => 'Inicio',
-            'route'  => 'docentes.index',
+            'route'  => 'docentes.dashboard',
             'icon' => 'fas fa-fw fa-home',
         ],
         [
             'text' => 'Carga Académica',
-            'url'  => 'admin/settings',
+            'route'  => 'docentes.cargaAcademica',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -318,12 +318,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Enviar Portafolio',
-                    'url'  => 'admin/settings',
+                    'route'  => 'docentes.enviarPortafolio',
                     'icon' => 'fas fa-fw fa-paper-plane',
                 ],
                 [
                     'text' => 'Revisados',
-                    'url'  => 'admin/settings',
+                    'route'  => 'docentes.portafoliosRevisados',
                     'icon' => 'fas fa-fw fa-clipboard-check',
                 ],
             ],

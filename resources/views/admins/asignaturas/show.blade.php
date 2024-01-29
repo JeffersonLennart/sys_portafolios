@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Ver Semestre')
+@section('title', 'Ver Asignatura')
 
 @section('content_header')
-  <h1 class="text-center"><b>Datos del Semestre</b></h1>
+  <h1 class="text-center"><b>Datos del Asignatura</b></h1>
 @stop
 
 @section('content')
@@ -14,24 +14,28 @@
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Fecha Inicio</th>
-                        <th>Fecha Fin</th>                
-                        <th>Estado</th>                                                        
+                        <th>Tipo</th>
+                        <th>Codigo</th>                
+                        <th>Escuela</th>                                   
+                        <th>Categoria</th>        
+                        <th>Creditos</th>                                                         
                     </tr>
                 </thead>
                 <tbody>                    
                         <tr>
-                            <td>{{ $semestre->id }}</td>
-                            <td>{{ $semestre->nombre }}</td>
-                            <td>{{ $semestre->fecha_inicio }}</td>
-                            <td>{{ $semestre->fecha_fin }}</td>                                     
-                            <td>{{ $semestre->estado }}</td>                                     
+                            <td>{{ $asignatura->id }}</td>
+                            <td>{{ $asignatura->nombre }}</td>
+                            <td>{{ $asignatura->tipo }}</td>
+                            <td>{{ $asignatura->codigo }}</td>
+                            <td>{{ $asignatura->escuela }}</td>     
+                            <td>{{ $asignatura->categoria }}</td>
+                            <td>{{ $asignatura->creditos }}</td>                                      
                         </tr>                    
                 </tbody>
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('semestres.index') }}">Volver</a>
+                <a class="btn btn-secondary" href="{{ route('asignaturas.index') }}">Volver</a>
             </div>
 
         </div>

@@ -1,16 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Semestre')
+@section('title', 'Crear Asignatura')
 
 @section('content_header')
-  <h1 class="text-center"><b>Agregar nuevo Semestre</b></h1>
+  <h1 class="text-center"><b>Agregar nuevo Asignatura</b></h1>
 @stop
 
 @section('content')
 
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('semestres.store') }}" method="POST">
+        <form action="{{ route('asignaturas.store') }}" method="POST">
             @csrf
 
             <!-- Nombre -->
@@ -22,37 +22,55 @@
                 <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
             </div>
 
-            <!-- Fecha Inicio -->
+            <!-- Tipo -->
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="fecha_inicio">Fecha de Inicio:</label>
+                <label class="col-sm-1 col-form-label" for="tipo">Tipo:</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" value="{{ old('fecha_inicio') }}">
+                    <input type="text" class="form-control" id="tipo" name="tipo" value="{{ old('tipo') }}">
                 </div>
-                <x-input-error :messages="$errors->get('fecha_inicio')" class="mt-2" />
+                <x-input-error :messages="$errors->get('tipo')" class="mt-2" />
             </div>            
 
-            <!-- Fecha Fin -->
+            <!-- Codigo -->
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="fecha_fin">Fecha de Fin:</label>
+                <label class="col-sm-1 col-form-label" for="codigo">Codigo:</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" value="{{ old('fecha_fin') }}">
+                    <input type="text" class="form-control" id="codigo" name="codigo" value="{{ old('codigo') }}">
                 </div>
-                <x-input-error :messages="$errors->get('fecha_fin')" class="mt-2" />
+                <x-input-error :messages="$errors->get('codigo')" class="mt-2" />
             </div>            
 
-            <!-- Estado -->
+            <!-- Escuela -->
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="estado">Estado:</label>
+                <label class="col-sm-1 col-form-label" for="escuela">Escuela:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="estado" name="estado" value="{{ old('estado') }}">
+                    <input type="text" class="form-control" id="escuela" name="escuela" value="{{ old('escuela') }}">
                 </div>
-                <x-input-error :messages="$errors->get('estado')" class="mt-2" />
+                <x-input-error :messages="$errors->get('escuela')" class="mt-2" />
+            </div>
+
+            <!-- Categoria -->
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label" for="categoria">Categoria:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="categoria" name="categoria" value="{{ old('categoria') }}">
+                </div>
+                <x-input-error :messages="$errors->get('categoria')" class="mt-2" />
+            </div>
+
+            <!-- Creditos -->
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label" for="creditos">Creditos:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="creditos" name="creditos" value="{{ old('creditos') }}">
+                </div>
+                <x-input-error :messages="$errors->get('creditos')" class="mt-2" />
             </div>
                        
 
             <div class="text-center" >                
-                <input type="submit" value="Crear Semestre" class="btn btn-primary">             
-                <a href="{{ route('semestres.index') }}" class="btn btn-secondary">Cancelar</a>
+                <input type="submit" value="Crear Asignatura" class="btn btn-primary">             
+                <a href="{{ route('asignaturas.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

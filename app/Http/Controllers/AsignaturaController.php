@@ -28,16 +28,16 @@ class AsignaturaController extends Controller
     }
 
     // Almacenar Asignatura
-    public function store(AsignaturaRequest $request)
+    public function store(Request $request)
     {        
-        // Crear Asignatura (Para que funciones importante en el Modelo de semestre los campos deben estar en $fillable)
+        // Crear Asignatura 
         $asignatura = Asignatura::create([
             'nombre' => $request->nombre,
             'tipo' => $request->tipo,            
             'codigo' => $request->codigo,
             'escuela' => $request->escuela,  
             'categoria' => $request->categoria, 
-            'cretidos' => $request->creditos,             
+            'creditos' => $request->creditos,             
         ]);
         return redirect()->route('asignaturas.index')->with('mensaje', 'La Asignatura '.$asignatura->id.' ha sido agregado con exito');
     }
@@ -58,7 +58,7 @@ class AsignaturaController extends Controller
     }
 
     // Para editar Asignatura
-    public function update(AsignaturaRequest $request, Asignatura $asignatura)
+    public function update(Request $request, Asignatura $asignatura)
     {
         $asignatura = Asignatura::find($asignatura->id);
         // Actualizar asignatura

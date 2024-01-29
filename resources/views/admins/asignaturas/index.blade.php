@@ -29,7 +29,8 @@
             <th>Codigo</th>                
             <th>Escuela</th>                                   
             <th>Categoria</th>        
-            <th>Creditos</th>         
+            <th>Creditos</th>  
+            <th>Acciones</th>        
         </tr>
     </thead>
     <tbody>

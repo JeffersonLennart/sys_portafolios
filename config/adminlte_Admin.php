@@ -333,6 +333,11 @@ return [
             'icon'    => 'fas fa-fw fa-book-open',
             'submenu' => [
                 [
+                    'text' => 'Asignatura',
+                    'route'  => 'asignaturas.index',
+                    'icon' => 'fas fa-fw fa-book',
+                ],
+                [
                     'text' => 'Escuela',
                     'route'  => 'admins.cargaAcademicaEscuela',
                     'icon' => 'fas fa-fw fa-school',

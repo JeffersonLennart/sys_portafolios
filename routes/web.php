@@ -62,6 +62,8 @@ Route::middleware(['auth','role:Docente'])->group(function () {
 });
 
 
+
+
 // Rutas para el panel de Revisor
 Route::middleware(['auth','role:Revisor'])->group(function () {
 
@@ -78,6 +80,10 @@ Route::middleware(['auth','role:Revisor'])->group(function () {
     // Ruta para mostrar el historial de revisiones 
     Route::get('revisores/historial_revisiones', [RevisorController::class, 'historialRevisiones'])->name('revisores.historialRevisiones');
 });
+
+
+
+
 
 Route::middleware(['auth','role:Admin'])->group(function () {
 

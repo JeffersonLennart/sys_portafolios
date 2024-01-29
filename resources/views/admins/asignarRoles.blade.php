@@ -2,7 +2,6 @@
 
 @section('title', 'Asignar Roles')
 @section('plugins.Datatables', true)
-@section('plugins.Select2', true)
 
 @section('content_header')
 <h1 class="text-center"><b>Asignación de Roles a Docentes</b></h1>

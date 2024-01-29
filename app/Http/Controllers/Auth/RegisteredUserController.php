@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Docente;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -50,6 +51,11 @@ class RegisteredUserController extends Controller
             'grado_academico' => $request->grado_academico,
         ]);
 
+        // Crear Docente
+        $docente = new Docente();
+        $docente->user_id = $user->id;
+        $docente->save();
+        
         event(new Registered($user));
 
         Auth::login($user);

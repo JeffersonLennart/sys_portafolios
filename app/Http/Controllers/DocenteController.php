@@ -20,7 +20,7 @@ class DocenteController extends Controller
 
     /*
         *******************************************************************
-            CONTROLADORES PARA EL CRUD DE DOCENTES EN EL PANEL DE ADMIN
+            FUNCIONES PARA EL CRUD DE DOCENTES EN EL PANEL DE ADMIN
         *******************************************************************
     */
 
@@ -98,5 +98,29 @@ class DocenteController extends Controller
         User::find($docente->user_id)->delete();
         return back()->with('mensaje', 'El Docente '.$docente->id.' ha sido eliminado con exito');
     }   
+
+
+     /*
+        *********************************************
+            OTRAS FUNCIONES DEL PANEL DE DOCENTE
+        *********************************************
+    */
+
+    // Función para mostrar carga academica del docente
+    public function cargaAcademica(){
+
+    }
+
+
+    // Función para enviar un portafolio (debe seleccionar de que carga academica desea enviar el portafolio)
+    public function enviarPortafolio(){
+
+    }
+
+    // Función para mostrar los portafolios revisados
+    public function portafoliosRevisados(){
+
+    }
+
 
 }

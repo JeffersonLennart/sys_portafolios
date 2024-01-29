@@ -11,7 +11,7 @@ class SemestreController extends Controller
 
    /*
         *******************************************************************
-            CONTROLADORES PARA EL CRUD DE SEMESTRE EN EL PANEL DE ADMIN
+            FUNCIONES PARA EL CRUD DE SEMESTRE EN EL PANEL DE ADMIN
         *******************************************************************
     */
 

@@ -27,17 +27,6 @@ class EnsureUserHasRole
             return $next($request); 
         }
         
-        // Si no lo corresponde, logearlo a su dashboard correspondiente
-        // switch($rol_actual){
-        //     case "Docente":                
-        //         return redirect()->intended(RouteServiceProvider::HOME_DOCENTE);      
-        //     case "Revisor":                
-        //         return redirect()->intended(RouteServiceProvider::HOME_REVISOR);                                      
-        //     case "Admin":                
-        //         return redirect()->intended(RouteServiceProvider::HOME_ADMIN);                                      
-        // }
-
-        // Pasa por aqui si al usuario no le corresponde el rol
         // Si el usuario esta autenticado, le damos logout
         if (auth()->check()) 
             auth()->logout();        

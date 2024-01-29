@@ -14,7 +14,7 @@ class DocenteRevisorController extends Controller
     
     /*
         ***********************************************************************
-            CONTROLADORES PARA LA ASIGNACIÓN DE REVISORES EN EL PANEL DE ADMIN
+            FUNCIONES PARA LA ASIGNACIÓN DE REVISORES EN EL PANEL DE ADMIN
         ***********************************************************************
     */
 

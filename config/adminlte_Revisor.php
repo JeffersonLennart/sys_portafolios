@@ -309,12 +309,12 @@ return [
         ],
         [
             'text' => 'Revisar Portafolio',
-            'url'  => 'admin/settings',
+            'route'  => 'revisores.revisarPortafolios',
             'icon' => 'fas fa-fw fa-clipboard-list',
         ],  
         [
             'text' => 'Historial de Revisiones',
-            'url'  => 'admin/settings',
+            'route'  => 'revisores.historialRevisiones',
             'icon' => 'fas fa-fw fa-history',
         ],  
         [

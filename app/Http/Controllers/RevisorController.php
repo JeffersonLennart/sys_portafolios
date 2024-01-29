@@ -21,7 +21,7 @@ class RevisorController extends Controller
 
     /*
         *******************************************************************
-            CONTROLADORES PARA EL CRUD DE REVISORES EN EL PANEL DE ADMIN
+            FUNCIONES PARA EL CRUD DE REVISORES EN EL PANEL DE ADMIN
         *******************************************************************
     */
 
@@ -102,5 +102,22 @@ class RevisorController extends Controller
     {
         User::find($revisore->user_id)->delete();
         return back()->with('mensaje', 'El Revisor '.$revisore->id.' ha sido eliminado con exito');
+    }
+
+
+    /*
+        **********************************************
+            OTRAS FUNCIONES EN EL PANEL DE REVISOR
+        **********************************************
+    */
+
+    // Función para revisar potafolios que le corresponden
+    public function revisarPortafolios(){
+
+    }
+
+    // Función para mostrar historial de revisiones
+    public function historialRevisiones(){
+
     }
 }

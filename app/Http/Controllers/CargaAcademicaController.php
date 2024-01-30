@@ -99,13 +99,4 @@ class CargaAcademicaController extends Controller
         return back()->with('mensaje', 'La Carga Academica '.$carga_academica->id.' ha sido eliminada con exito');
     } 
 
-    // Ruta para la carga academica de la escuela
-    public function cargaAcademicaEscuela(){
-
-      $cargas_academicas = CargaAcademica::whereHas('asignatura', function ($query) {
-      $query->where('escuela', 'INGENIERIA INFORMATICA');})->get();
-
-      return view('admins.carga_academicas.index', compact('cargas_academicas'));
-
-    }
 }

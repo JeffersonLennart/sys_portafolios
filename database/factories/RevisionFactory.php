@@ -19,6 +19,7 @@ class RevisionFactory extends Factory
         return [
             'numero_revision' => $this->faker->randomElement([1, 2, 3]),
             'fecha_revision' => $this->faker->dateTimeBetween('2023-01-01', '2023-12-31'),
+            'con_informe' => $this->faker->randomElement([0,1]),       
             'observaciones' => $this->faker->text,
         ];
     }

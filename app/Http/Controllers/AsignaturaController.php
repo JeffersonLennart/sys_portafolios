@@ -68,7 +68,7 @@ class AsignaturaController extends Controller
             'codigo' => $request->codigo,
             'escuela' => $request->escuela,  
             'categoria' => $request->categoria, 
-            'cretidos' => $request->creditos,   
+            'creditos' => $request->creditos,   
         ]);
 
         return redirect()->route('asignaturas.index')->with('mensaje', 'La Asignatura '.$asignatura->id.' ha sido modificado con exito');

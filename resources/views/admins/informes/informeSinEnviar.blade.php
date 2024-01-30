@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Asignatura')
+@section('title', 'Informes')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Asignatura</b></h1>
+  <h1 class="text-center"><b>Registro de Informes Sin Enviar</b></h1>
 @stop
 
 @section('content')
@@ -17,43 +17,41 @@
 @endif
 
 <div class="card-header">
-  <a href="{{ route('asignaturas.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Asignatura</b></a>
+  <a href="{{ route('informes.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Informe</b></a>
 </div>
 
 <table id="tabla" class="table">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
-            <th>Codigo</th>                
-            <th>Escuela</th>                                   
-            <th>Categoria</th>        
-            <th>Creditos</th>  
-            <th>Acciones</th>        
+            <th>Asignatura</th>
+            <th>Docente</th>
+            <th>Fecha del Informe</th>                
+            <th>Cumplimiento</th>                                   
+            <th>Acciones</th>                 
         </tr>
     </thead>
     <tbody>
-        @foreach ($asignaturas as $asignatura)
+        @foreach ($informes as $informe)
             <tr>
-                <td>{{ $asignatura->id }}</td>
-                <td>{{ $asignatura->nombre }}</td>
-                <td>{{ $asignatura->tipo }}</td>
-                <td>{{ $asignatura->codigo }}</td>
-                <td>{{ $asignatura->escuela }}</td>     
-                <td>{{ $asignatura->categoria }}</td>
-                <td>{{ $asignatura->creditos }}</td>      
+                <td>{{ $informe->id }}</td>
+                <td>{{ $informe->revision->portafolio->cargaAcademica->asignatura->nombre }}</td>
+                <td>{{ $informe->revisor->user->name }}</td>
+                <td>{{ $informe->fecha_informe }}</td>
+                <td>{{ $informe->cumplimiento }}</td>          
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('asignaturas.show', $asignatura) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('asignaturas.edit', $asignatura) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('asignaturas.destroy', $asignatura) }}">
+                    <a href="{{ route('informes.show', $informe) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                    <a href="{{ route('informes.edit', $informe) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
+                      <form method="POST" action="{{ route('informes.destroy', $informe) }}">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                       </form>
                   </div>
-                </td>           
+                </td>
+              
+                 
             </tr>
         @endforeach
     </tbody>

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Ver Semestre')
+@section('title', 'Ver Portafolo')
 
 @section('content_header')
-  <h1 class="text-center"><b>Datos del Semestre</b></h1>
+  <h1 class="text-center"><b>Datos del Portafolio</b></h1>
 @stop
 
 @section('content')
@@ -13,25 +13,21 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Fecha Inicio</th>
-                        <th>Fecha Fin</th>                
-                        <th>Estado</th>                                                        
+                        <th>Carga Academica ID</th>
+                        <th>Tipo de Portafolio</th>                                                       
                     </tr>
                 </thead>
                 <tbody>                    
                         <tr>
-                            <td>{{ $semestre->id }}</td>
-                            <td>{{ $semestre->nombre }}</td>
-                            <td>{{ $semestre->fecha_inicio }}</td>
-                            <td>{{ $semestre->fecha_fin }}</td>                                     
-                            <td>{{ $semestre->estado }}</td>                                     
+                            <td>{{ $portafolio->id }}</td>
+                            <td>{{ $portafolio->carga_academica_id }}</td>
+                            <td>{{ $portafolio->tipo_portafolio }}</td>                                   
                         </tr>                    
                 </tbody>
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('semestres.index') }}">Volver</a>
+                <a class="btn btn-secondary" href="{{ route('portafolios.index') }}">Volver</a>
             </div>
 
         </div>

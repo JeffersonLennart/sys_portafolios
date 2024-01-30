@@ -9,6 +9,12 @@ class Revision extends Model
 {
     use HasFactory;
 
+    protected $table = 'revisions';
+
+    protected $fillable = [
+        'observaciones',            
+    ];
+
     // Relación uno a muchos con portafolios (inversa)
     public function portafolio(){
         return $this->belongsTo('App\Models\Portafolio');

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Ver Semestre')
+@section('title', 'Ver Revision')
 
 @section('content_header')
-  <h1 class="text-center"><b>Datos del Semestre</b></h1>
+  <h1 class="text-center"><b>Datos de la Revision</b></h1>
 @stop
 
 @section('content')
@@ -12,26 +12,31 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Fecha Inicio</th>
-                        <th>Fecha Fin</th>                
-                        <th>Estado</th>                                                        
+                      <th>ID</th>
+                      <th>Docente</th>
+                      <th>Revisor</th>
+                      <th>Asignatura</th>
+                      <th>Numero de revision</th>                
+                      <th>Fecha de revision</th>  
+                      <th>Observaciones</th>                                   
+                      <th>Acciones</th>                                                        
                     </tr>
                 </thead>
                 <tbody>                    
                         <tr>
-                            <td>{{ $semestre->id }}</td>
-                            <td>{{ $semestre->nombre }}</td>
-                            <td>{{ $semestre->fecha_inicio }}</td>
-                            <td>{{ $semestre->fecha_fin }}</td>                                     
-                            <td>{{ $semestre->estado }}</td>                                     
+                          <td>{{ $revisione->id }}</td>
+                          <td>{{ $revisione->portafolio->cargaAcademica->docente->user->name }}</td>
+                          <td>{{ $revisione->revisor->user->name }}</td>
+                          <td>{{ $revisione->portafolio->cargaAcademica->asignatura->nombre }}</td>
+                          <td>{{ $revisione->numero_revision }}</td>
+                          <td>{{ $revisione->fecha_revision }}</td>
+                          <td>{{ $revisione->observaciones }}</td>                                     
                         </tr>                    
                 </tbody>
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('semestres.index') }}">Volver</a>
+                <a class="btn btn-secondary" href="{{ route('revisiones.index') }}">Volver</a>
             </div>
 
         </div>

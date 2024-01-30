@@ -9,6 +9,14 @@ class CargaAcademica extends Model
 {
     use HasFactory;
 
+    protected $table = 'carga_academicas';
+
+    protected $fillable = [
+        'docente_id',
+        'asignatura_id',
+        'semestre_id',             
+    ];
+
     // Relación uno a muchos con docente (inversa)
     public function docente(){
         return $this->belongsTo('App\Models\Docente');
@@ -21,7 +29,7 @@ class CargaAcademica extends Model
 
     // Relación uno a muchos con docente (inversa)
     public function semestre(){
-        return $this->belongsTo('App\Models\Semestres');
+        return $this->belongsTo('App\Models\Semestre');
     }
 
     // Relación uno a uno con portafolio

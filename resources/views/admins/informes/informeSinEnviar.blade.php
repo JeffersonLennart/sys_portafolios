@@ -4,7 +4,7 @@
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Informes Enviados</b></h1>
+  <h1 class="text-center"><b>Registro de Informes Sin Enviar</b></h1>
 @stop
 
 @section('content')
@@ -16,6 +16,10 @@
   </div>
 @endif
 
+<div class="card-header">
+  <a href="{{ route('informes.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Informe</b></a>
+</div>
+
 <table id="tabla" class="table">
     <thead>
         <tr>
@@ -24,7 +28,7 @@
             <th>Docente</th>
             <th>Fecha del Informe</th>                
             <th>Cumplimiento</th>                                   
-            <th>Acciones</th>                
+            <th>Acciones</th>                 
         </tr>
     </thead>
     <tbody>
@@ -34,10 +38,11 @@
                 <td>{{ $informe->revision->portafolio->cargaAcademica->asignatura->nombre }}</td>
                 <td>{{ $informe->revisor->user->name }}</td>
                 <td>{{ $informe->fecha_informe }}</td>
-                <td>{{ $informe->cumplimiento }}</td>           
+                <td>{{ $informe->cumplimiento }}</td>          
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
                     <a href="{{ route('informes.show', $informe) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                    <a href="{{ route('informes.edit', $informe) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
                       <form method="POST" action="{{ route('informes.destroy', $informe) }}">
                           @csrf
                           @method('DELETE')

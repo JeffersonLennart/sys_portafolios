@@ -235,12 +235,12 @@
             <p>Full Stack Developer</p>
           </div>
         </div>
-        <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/03.jpg" class="img-circle" alt="">
+        <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Wilman.jpeg" class="img-circle" alt="">
           <h5>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur</h5>
           <h6>Wilman Ccasani H.</h6>
           <p>Data Scientist</p>
         </div>
-        <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/03.jpg" class="img-circle" alt="">
+        <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/CristhianC.jpeg" class="img-circle" alt="">
           <h5>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur</h5>
           <h6>Cristhian Ccala H.</h6>
           <p>Backend Developer</p>
@@ -284,7 +284,7 @@
     </div>
   </div>
 </section>
-<!--Client-Section-Start-->
+<!--Footer-Start-->
 <footer id="footer">
   <div class="bg-sec">
     <div class="container">

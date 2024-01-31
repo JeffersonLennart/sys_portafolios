@@ -15,7 +15,7 @@
 
             <!-- Docente -->
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="docente_id">Docente sin Carga:</label>
+                <label class="col-sm-1 col-form-label" for="docente_id">Docente:</label>
                 <div class="col-sm-10">
                     <select id="docente_id" name="docente_id" class="form-control col-12" required>
                         @foreach ( $docentes as $docente )

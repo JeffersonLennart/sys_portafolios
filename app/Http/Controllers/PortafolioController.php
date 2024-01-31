@@ -71,5 +71,12 @@ class PortafolioController extends Controller
     {
         Portafolio::find($portafolio->id)->delete();
         return back()->with('mensaje', 'El Portafolio '.$portafolio->id.' ha sido eliminado con exito');
-    } 
+    }
+    
+    // Mostrar datos de la Portafolio en revisor
+    public function PortafolioShow(Portafolio $portafolio)
+    {
+        $portafolio = Portafolio::find($portafolio->id);
+        return view('revisores.portafolios.show', compact('portafolio'));
+    }
 }

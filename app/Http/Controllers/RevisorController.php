@@ -118,7 +118,8 @@ class RevisorController extends Controller
     public function revisarPortafolios(){
 
       #obtenemos todos los portafolios que le corresponden al revisor
-      $revisorId = Auth::user()->id;
+      //$revisorId = Auth::user()->id;
+      $revisorId = Auth::user()->revisors->first()->id;      
       $portafolios = Portafolio::whereHas('cargaAcademica.docente.DocenteRevisor', function ($query) use ($revisorId) {$query->where('revisor_id', $revisorId);})->doesntHave('revisiones')->get();
       return view('revisores.portafolios.index',compact('portafolios'));
 
@@ -128,7 +129,8 @@ class RevisorController extends Controller
     public function historialRevisiones(){
       
       #obtenemos todas las revisiones que hizo en actual revisor
-      $revisorId = Auth::user()->id;
+    //   $revisorId = Auth::user()->id;
+      $revisorId = Auth::user()->revisors->first()->id;  
       $revisiones = Revision::where("revisor_id", $revisorId)->get();
       return view('revisores.revisiones.index',compact('revisiones'));
 

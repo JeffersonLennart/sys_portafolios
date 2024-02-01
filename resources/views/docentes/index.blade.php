@@ -31,7 +31,7 @@
                     </div>
                     <div class="card-body">
                         <div class="text-center">                            
-                            <a href="#" class="btn btn-primary"><img src="{{ asset('images/portafolio.png') }}" width="150" height="150"></a>
+                            <a href="{{ route('docentes.cargaAcademica') }}" class="btn btn-primary"><img src="{{ asset('images/portafolio.png') }}" width="150" height="150"></a>
                         </div>                        
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="card-body">
                         <div class="text-center">                            
-                            <a href="#" class="btn btn-primary"><img src="{{ asset('images/enviar.png') }}" width="150" height="150"></a>
+                            <a href="{{ route('docentes.enviarPortafolio') }}" class="btn btn-primary"><img src="{{ asset('images/enviar.png') }}" width="150" height="150"></a>
                         </div>                        
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-body">
                         <div class="text-center">                            
-                            <a href="#" class="btn btn-primary"><img src="{{ asset('images/revisados.png') }}" width="150" height="150"></a>
+                            <a href="{{ route('docentes.portafoliosRevisados') }}" class="btn btn-primary"><img src="{{ asset('images/revisados.png') }}" width="150" height="150"></a>
                         </div>                        
                     </div>
                 </div>

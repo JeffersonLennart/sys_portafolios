@@ -87,7 +87,8 @@ class RevisionController extends Controller
     // Almacenar Revision 
     public function RevisionStore(Request $request)
     { 
-        $revisorId = Auth::user()->id;    
+        // $revisorId = Auth::user()->id;    
+        $revisorId = Auth::user()->revisors->first()->id;    
         $portafolio = Portafolio::find($request->id);
         $fechaActual = Carbon::now()->format('Y-m-d');
         $revision = Revision::create([

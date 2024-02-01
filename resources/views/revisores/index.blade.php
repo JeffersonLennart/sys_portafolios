@@ -31,7 +31,7 @@
                     </div>
                     <div class="card-body">
                         <div class="text-center">                            
-                            <a href="#" class="btn btn-primary"><img src="{{ asset('images/revisar.png') }}" width="150" height="150"></a>
+                            <a href="{{ route('revisores.revisarPortafolios') }}" class="btn btn-primary"><img src="{{ asset('images/revisar.png') }}" width="150" height="150"></a>
                         </div>                        
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="card-body">
                         <div class="text-center">                            
-                            <a href="#" class="btn btn-primary"><img src="{{ asset('images/historial.png') }}" width="150" height="150"></a>
+                            <a href="{{ route('revisores.historialRevisiones') }}" class="btn btn-primary"><img src="{{ asset('images/historial.png') }}" width="150" height="150"></a>
                         </div>                        
                     </div>
                 </div>

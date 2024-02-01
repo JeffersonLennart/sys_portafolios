@@ -20,7 +20,7 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Carga Academica ID</th>
+            <th>Asignatura</th>
             <th>Docente</th>
             <th>Tipo de Portafolio</th>                                  
             <th>Acciones</th>                
@@ -30,7 +30,7 @@
         @foreach ($portafolios as $portafolio)
             <tr>
                 <td>{{ $portafolio->id }}</td>
-                <td>{{ $portafolio->carga_academica_id }}</td>
+                <td>{{ $portafolio->cargaAcademica->asignatura->nombre }}</td>
                 <td>{{ $portafolio->cargaAcademica->docente->user->name }}</td>
                 <td>{{ $portafolio->tipo_portafolio }}</td>        
                 <td>

@@ -120,8 +120,11 @@ Capa de Lógica:
 Capa de Datos:
 - Modelo de base de datos relacional para almacenar información de docentes, portafolios y revisiones
 
-Base de Datos
+## Estructura de la Base de Datos
 
+### Tabla de Usuarios (users)
+
+```sql
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     username NVARCHAR(25) NOT NULL,
@@ -248,6 +251,7 @@ CREATE TABLE informes (
     FOREIGN KEY (revision_id) REFERENCES revisiones(id),
     FOREIGN KEY (presidente_id) REFERENCES revisores(id)
 );
+```
 
 ## License
 

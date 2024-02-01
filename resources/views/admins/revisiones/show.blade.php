@@ -18,8 +18,7 @@
                       <th>Asignatura</th>
                       <th>Numero de revision</th>                
                       <th>Fecha de revision</th>  
-                      <th>Observaciones</th>                                   
-                      <th>Acciones</th>                                                        
+                      <th>Observaciones</th>         
                     </tr>
                 </thead>
                 <tbody>                    

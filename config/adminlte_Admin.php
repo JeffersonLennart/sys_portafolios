@@ -338,11 +338,6 @@ return [
                     'icon' => 'fas fa-fw fa-book',
                 ],
                 [
-                    'text' => 'Escuela',
-                    'route'  => 'admins.cargaAcademicaEscuela',
-                    'icon' => 'fas fa-fw fa-school',
-                ],
-                [
                     'text' => 'General',
                     'route'  => 'carga_academicas.index',
                     'icon' => 'fas fa-fw fa-university',

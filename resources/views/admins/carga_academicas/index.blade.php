@@ -26,7 +26,8 @@
             <th>ID</th>
             <th>Docente</th>
             <th>Asignatura</th>  
-            <th>Semestre</th>                                
+            <th>Escuela</th> 
+            <th>Semestre</th>                              
             <th>Acciones</th>                
         </tr>
     </thead>
@@ -35,7 +36,8 @@
             <tr>
                 <td>{{ $carga_academica->id }}</td>
                 <td>{{ $carga_academica->docente->user->name }}</td>
-                <td>{{ $carga_academica->asignatura->nombre}}</td>  
+                <td>{{ $carga_academica->asignatura->nombre}}</td>
+                <td>{{ $carga_academica->asignatura->escuela}}</td>   
                 <td>{{ $carga_academica->semestre->nombre}}</td>       
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">

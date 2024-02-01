@@ -934,7 +934,7 @@
   content: "\f10c";
 }
 .fa-quote-left:before {
-  content: "\f10d";
+  content: "";
 }
 .fa-quote-right:before {
   content: "\f10e";

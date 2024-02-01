@@ -57,7 +57,7 @@
             <ul class="nav navbar-nav">
               <li><a class="scroll" href="#about">Sistema de Portafolios</a></li>
               <li><a class="scroll" href="#features">Desarrollo de Software</a></li>
-              <li><a class="scroll" href="#testimonials">Equipo de Desarrollo</a></li>
+              <li><a class="scroll" href="#testimonials">Conoce a nuestro Equipo</a></li>
               <!-- Agrega la lógica de autenticación y roles aquí -->
               @auth
                 @if (session()->get('rol') == 'Docente')
@@ -138,7 +138,7 @@
       <div class="col-md-12 ab-sec">
         <div class="col-md-6">
           <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms"><span>C</span>reativo y Asombroso</h3>
-          <p><span><strong>E</strong></span>n el universo de la evaluación de proyectos, destacamos como arquitectos de experiencias singulares. Nos sumergimos en el arte de la presentación, buscando más allá de lo convencional para construir portafolios que no solo impresionan, sino que cuentan historias visualmente cautivadoras. Cada línea de código que escribimos es una pincelada en la tela de la creatividad. Trabajamos incansablemente, no solo para destacar en el diseño, sino para elevar la esencia de cada proyecto que tocamos. Nuestro compromiso con la excelencia se refleja en cada detalle.</p>
+          <p><span><strong>E</strong></span>n el universo de la evaluación de portafolios, destacamos como arquitectos de experiencias singulares. Nos sumergimos en el arte de la presentación, buscando más allá de lo convencional para construir portafolios que no solo impresionan, sino que cuentan historias visualmente cautivadoras. Cada línea de código que escribimos es una pincelada en la tela de la creatividad. Trabajamos incansablemente, no solo para destacar en el diseño, sino para elevar la esencia de cada proyecto que tocamos. Nuestro compromiso con la excelencia se refleja en cada detalle.</p>
         </div>
         <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img src="images/Aboutus/01.jpg" alt=""> </div>
       </div>
@@ -214,7 +214,7 @@
           <div class="clearfix"></div>
           <p class="feat-sec">Explora el mundo de la creatividad con nuestra "Creative Gallery". Cada obra es una expresión única de ingenio y habilidad artística, ofreciendo una experiencia visual cautivadora. Nos destacamos por curar una colección diversa que abarca desde ilustraciones impactantes hasta diseños innovadores.<br>
           </p>
-          <p class="feat-sec-1">Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound </p>
+          <p class="feat-sec-1">En este escaparate digital, no solo creamos software; diseñamos experiencias inolvidables. Nuestro enfoque innovador se refleja en cada proyecto, destacándose por su originalidad y creatividad. Si buscas soluciones que trasciendan lo común y que estén a la vanguardia de la tecnología, has llegado al lugar adecuado. Únete a nosotros en la exploración de nuevas fronteras digitales, donde tu visión cobra vida con un toque de autenticidad y una pizca de innovación. ¡Convierte tu idea en una obra maestra digital con nosotros! </p>
         </div>
         <div class="col-md-6 tab-img"><img src="images/Features/05.jpg" class="img-responsive" alt=""></div>
       </div>
@@ -224,60 +224,64 @@
 <!--Testimonials-Section-Start-->
 <section id="testimonials" class="parallex">
   <div class="container">
-    <div class="quote"> <i class="fa fa-quote-left"></i> </div>
+    <div class="quote"><i class="fa fa-quote-left"></i></div>
+    <div class="heading">
+      {{-- <h2><span>EQUIPO DE DESARROLLO</span></h2> --}}
+      <div class="line"></div>
+    </div>
     <div class="clearfix"></div>
     <div class="slider-text">
       <div id="owl-testi" class="owl-carousel owl-theme">
         <div class="item">
           <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/LennartR.jpeg" class="img-circle" alt="">
-            <h5>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi.</h5>
-            <h6>Jefferson L. Campos S</h6>
+            <h5>Con una sólida comprensión de las últimas tecnologías y un enfoque meticuloso en cada línea de código, asegura soluciones que van más allá de las expectativas. Su compromiso con la excelencia técnica y su pasión por la innovación hacen de Jefferson un verdadero artista digital en el ámbito Full Stack</h5>
+            <h6>Jefferson L Campos S</h6>
             <p>Full Stack Developer</p>
           </div>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Wilman.jpeg" class="img-circle" alt="">
-          <h5>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur</h5>
-          <h6>Wilman Ccasani H.</h6>
+          <h5>Wilman se distingue por su habilidad para traducir conjuntos de datos complejos en ideas claras y estrategias accionables. Con un enfoque analítico agudo y una mentalidad orientada a los resultados, transforma datos en insights valiosos que impulsan la toma de decisiones informadas.</h5>
+          <h6>Wilman Ccasani H</h6>
           <p>Data Scientist</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/CristhianC.jpeg" class="img-circle" alt="">
-          <h5>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur</h5>
-          <h6>Cristhian Ccala H.</h6>
+          <h5>Su experiencia se centra en la creación de sólidos backends que respaldan aplicaciones y plataformas robustas. Con una profunda comprensión de los principios fundamentales del desarrollo backend, Cristhian diseña soluciones escalables y eficientes. </h5>
+          <h6>Cristhian Ccala H</h6>
           <p>Backend Developer</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Angel.jpeg" class="img-circle" alt="">
-          <h5>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur</h5>
-          <h6>Angel L. Cespedes V.</h6>
+          <h5>Angel fusiona creatividad con empatía, creando soluciones que van más allá de lo estético. Su enfoque prioriza la usabilidad y la satisfacción del usuario. Con habilidad innata para convertir ideas en interfaces visuales atractivas.</h5>
+          <h6>Angel L Cespedes V</h6>
           <p>User Experience (UX) Designer</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Joseph.jpg" class="img-circle" alt="">
-          <h5>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas</h5>
-          <h6>Joseph O. Espirilla M.</h6>
+          <h5>Joseph es un destacado Frontend Developer reconocido por su capacidad innata para transformar conceptos en interfaces dinámicas y responsivas. Su agudo ojo para los detalles y su compromiso con la innovación al desarrollo de aplicaciones web visualmente impactantes, intuitivas y orientadas al usuario.</h5>
+          <h6>Joseph O Espirilla M</h6>
           <p>Frontend Developer</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Andy.jpeg" class="img-circle" alt="">
-          <h5>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas</h5>
-          <h6>Andy M. Huaman Q.</h6>
+          <h5>Andy trabaja incansablemente para identificar y corregir posibles problemas, asegurando la fiabilidad y eficiencia de cada software. Con un profundo conocimiento de las mejores prácticas de aseguramiento de calidad, contribuye de manera crucial a la entrega de productos libres de defectos.</h5>
+          <h6>Andy M Huaman Q</h6>
           <p>Software Quality Engineer</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Alvino.jpeg" class="img-circle" alt="">
-          <h5>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas</h5>
+          <h5>Su destreza radica en la implementación de diseños innovadores que elevan la interacción del usuario. Luis combina su habilidad técnica con una comprensión profunda de las últimas tendencias de diseño y las mejores prácticas de experiencia del usuario.</h5>
           <h6>Luis A.Levita Q.</h6>
           <p>Frontend Developer</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Saman.jpeg" class="img-circle" alt="">
-          <h5>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas</h5>
-          <h6>Saman Quispe C.</h6>
+          <h5>Su experiencia abarca desde el análisis exploratorio hasta la implementación de modelos avanzados de aprendizaje automático. Saman se distingue por su habilidad para traducir conjuntos de datos complejos en ideas claras y estrategias accionables.</h5>
+          <h6>Saman Quispe C</h6>
           <p>Data Scientist</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Alberth.jpeg" class="img-circle" alt="">
-          <h5>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas</h5>
-          <h6>Jhon A. Quispe Q.</h6>
+          <h5>Jhon destaca por su habilidad para desarrollar backend que respaldan aplicaciones y plataformas escalables. Con un compromiso constante con la calidad del código y la optimización del rendimiento, contribuye a la construcción de sistemas que no solo son confiables sino también eficientes.</h5>
+          <h6>Jhon A Quispe Q</h6>
           <p>Backend Developer</p>
         </div>
         <div  class="col-md-10 col-md-offset-1"> <img src="images/Testimonials/Marko.jpeg" class="img-circle" alt="">
-          <h5>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas</h5>
-          <h6>Marko L. Valencia Ñ.</h6>
+          <h5>Con un enfoque analítico agudo y una mentalidad orientada a los resultados, transforma datos en insights valiosos que impulsan la toma de decisiones informadas. Su dedicación a la investigación y su destreza en las últimas técnicas de ciencia de datos.</h5>
+          <h6>Marko L Valencia Ñ</h6>
           <p>Data Scientist</p>
         </div>
       </div>

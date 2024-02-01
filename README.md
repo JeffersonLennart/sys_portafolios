@@ -122,9 +122,8 @@ Capa de Datos:
 
 ## Estructura de la Base de Datos
 
-### Tabla de Usuarios (users)
-
 ```sql
+-- Tabla de Usuarios (users)
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     username NVARCHAR(25) NOT NULL,

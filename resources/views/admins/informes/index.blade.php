@@ -20,7 +20,7 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Revisor ID</th>
+            <th>Docente</th>
             <th>Revisor</th>
             <th>Asignatura</th>
             <th>Fecha del Informe</th>                
@@ -32,8 +32,8 @@
         @foreach ($informes as $informe)
             <tr>
                 <td>{{ $informe->id }}</td>
-                <td>{{ $informe->revisor_id }}</td>
-                <td>{{ $informe->revisor->user->name }}</td>
+                <td>{{ $informe->revision->portafolio->cargaAcademica->docente->user->name }}</td>
+                <td>{{ $informe->revision->revisor->user->name }}</td>
                 <td>{{ $informe->revision->portafolio->cargaAcademica->asignatura->nombre }}</td>
                 <td>{{ $informe->fecha_informe }}</td>
                 <td>{{ $informe->cumplimiento }}</td>           

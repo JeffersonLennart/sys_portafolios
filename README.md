@@ -83,28 +83,30 @@ Sistema desarrollado por:
 
 Requerimientos funcionales del sistema
 
-Autenticación: Sistema de autenticación para docentes, revisores y administradores.
-Gestión de Docentes: Registro, actualización y eliminación de información personal y académica de los docentes.
-Gestión de Portafolios: Creación, actualización y eliminación de portafolios
-Gestión de Carga Académica: Registro, actualización y eliminación de la carga académica de cada docente para cada semestre, visualización clara de la carga académica actual para cada docente y para el departamento en general.
-Revisión de Portafolios: Interfaz para los revisores para evaluar los portafolios asignados, registro de observaciones y faltas encontradas durante la revisión, notificación a los docentes sobre los resultados de la revisión.
+- Autenticación: Sistema de autenticación para docentes, revisores y administradores.
+- Gestión de Docentes: Registro, actualización y eliminación de información personal y académica de los docentes.
+- Gestión de Portafolios: Creación, actualización y eliminación de portafolios
+- Gestión de Carga Académica: Registro, actualización y eliminación de la carga académica de cada docente para cada semestre, visualización clara de la carga     
+  académica actual para cada docente y para el departamento en general.
+- Revisión de Portafolios: Interfaz para los revisores para evaluar los portafolios asignados, registro de observaciones y faltas encontradas durante la revisión, 
+  notificación a los docentes sobre los resultados de la revisión.
 
 Arquitectura funcional del sistema 
 
-Módulo de Autenticación y Autorización: Gestiona el registro de autenticación y autorización de usuario, define roles y permisos correspondientes.
-Módulo Registro de Docentes: Accesible para Administrador(presidente) interactúa con la base de datos para almacenar la información del docente.
-Módulo de Actualización de Docentes: Permite la modificación de la información de los docentes, requiere autenticación y permisos de actualización.
-Módulo de Eliminación de Docente: Permite la eliminación de registros de docentes, requiere autenticación y permisos de eliminación.
-Módulo Creación de Portafolios: Accesible para docentes, permite la creación de nuevos portafolios asociados a asignaturas.
-Módulo Actualización de Portafolios: Permite a los docentes actualizar la información en los portafolios existentes.
-Módulo Eliminación de Portafolios: Permite a los docentes eliminar portafolios no deseados.
-Módulo Registro Carga Académica:Accesible para el Administrador(presidente), registrar la carga académica de los docentes para el semestre.
-Modulo Actualizacion Carga Académica: Permite la modificación de la carga académica asignada a los docentes.
-Módulo Eliminación Carga Académica: Permite la eliminación de registros de carga académica.
-Módulo Visualización de Carga Académica: Permite a los docentes y al administrador visualizar la carga académica asignada.
-Modulo de Evaluacion de Carga Académica: Accesible para los revisores asignados, permite a los revisores evaluar su cumplimiento con los portafolios.
-Módulo de Registro de Observaciones: Permite a los revisores registrar observaciones sobre los portafolios.
-Módulo para la Generación de Informes: Accesible para el Administrador(Presidente), genera informes basados en los resultados de las revisiones.
+- Módulo de Autenticación y Autorización: Gestiona el registro de autenticación y autorización de usuario, define roles y permisos correspondientes.
+- Módulo Registro de Docentes: Accesible para Administrador(presidente) interactúa con la base de datos para almacenar la información del docente.
+- Módulo de Actualización de Docentes: Permite la modificación de la información de los docentes, requiere autenticación y permisos de actualización.
+- Módulo de Eliminación de Docente: Permite la eliminación de registros de docentes, requiere autenticación y permisos de eliminación.
+- Módulo Creación de Portafolios: Accesible para docentes, permite la creación de nuevos portafolios asociados a asignaturas.
+- Módulo Actualización de Portafolios: Permite a los docentes actualizar la información en los portafolios existentes.
+- Módulo Eliminación de Portafolios: Permite a los docentes eliminar portafolios no deseados.
+- Módulo Registro Carga Académica:Accesible para el Administrador(presidente), registrar la carga académica de los docentes para el semestre.
+- Modulo Actualizacion Carga Académica: Permite la modificación de la carga académica asignada a los docentes.
+- Módulo Eliminación Carga Académica: Permite la eliminación de registros de carga académica.
+- Módulo Visualización de Carga Académica: Permite a los docentes y al administrador visualizar la carga académica asignada.
+- Modulo de Evaluacion de Carga Académica: Accesible para los revisores asignados, permite a los revisores evaluar su cumplimiento con los portafolios.
+- Módulo de Registro de Observaciones: Permite a los revisores registrar observaciones sobre los portafolios.
+- Módulo para la Generación de Informes: Accesible para el Administrador(Presidente), genera informes basados en los resultados de las revisiones.
 
 Arquitectura Tecnica del sistema
 

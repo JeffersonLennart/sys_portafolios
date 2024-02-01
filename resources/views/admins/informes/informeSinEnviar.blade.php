@@ -4,54 +4,56 @@
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Informes Sin Enviar</b></h1>
+    <h1 class="text-center"><b>Registro de Informes Sin Enviar</b></h1>
 @stop
 
 @section('content')
 
-@if (session('mensaje'))  
-  <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
-    <b>{{ session('mensaje') }}</b>
-  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-@endif
+    @if (session('mensaje'))
+        <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+            <b>{{ session('mensaje') }}</b>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
-<table id="tabla" class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Asignatura</th>
-            <th>Docente</th>
-            <th>Fecha del Informe</th>                
-            <th>Cumplimiento</th>                                   
-            <th>Acciones</th>                 
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($informes as $informe)
-            <tr>
-                <td>{{ $informe->id }}</td>
-                <td>{{ $informe->revision->portafolio->cargaAcademica->asignatura->nombre }}</td>
-                <td>{{ $informe->revisor->user->name }}</td>
-                <td>{{ $informe->fecha_informe }}</td>
-                <td>{{ $informe->cumplimiento }}</td>          
-                <td>
-                  <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('informes.show', $informe) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                  </div>
-                </td>
-              
-                 
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+   <form action="{{ route('informes.store') }}" method="POST">
+        @csrf
+        
+        <table id="tabla" class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Docente</th>
+                    <th>Revisor</th>
+                    <th>Nro de revision</th>
+                    <th>Fecha de Revision</th>
+                    <th>Observaciones</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($revisiones as $revisione)
+                    <tr>
+                        <td>{{ $revisione->id }}</td>
+                        <td>{{ $revisione->portafolio->cargaAcademica->docente->user->name }}</td>
+                        <td>{{ $revisione->revisor->user->name }}</td>
+                        <td>{{ $revisione->numero_revision }}</td>
+                        <td>{{ $revisione->fecha_revision }}</td>
+                        <td>{{ $revisione->observaciones }}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Acciones">
+                                <button type="submit" name="id" value="{{ $revisione->id }}"
+                                    class="btn btn-primary mr-2 btn-sm">Enviar</button>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </form>
 
-
-
-
-  
 @stop
+
 
 @section('css')
     <!-- Para bootstrap -->

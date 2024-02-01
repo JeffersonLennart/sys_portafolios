@@ -63,10 +63,10 @@
             <div class="form-group row">
                 <label class="col-sm-1 col-form-label" for="nombre">Observacion:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="observaciones" name="observaciones" value="{{ $revisione->observaciones }}">
+                    <input type="text" class="form-control" id="observaciones" name="observaciones" value="{{ $revisione->observaciones }}" style="height: 70px; white-space: pre-wrap;">
                 </div>
                 <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
-            </div>          
+            </div>
 
             <div class="text-center" >                
                 <input type="submit" value="Editar Revision" class="btn btn-primary">             

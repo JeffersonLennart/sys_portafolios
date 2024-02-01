@@ -21,9 +21,7 @@ class CargaAcademicaController extends Controller
     // Mostrar CargaAcademicas
     public function index()
     {
-      $cargas_academicas = CargaAcademica::whereDoesntHave('asignatura', function ($query) {
-      $query->where('escuela', 'INGENIERIA INFORMATICA');})->get();
-
+      $cargas_academicas = CargaAcademica::all();
       return view('admins.carga_academicas.index', compact('cargas_academicas'));
 
     }
@@ -35,8 +33,7 @@ class CargaAcademicaController extends Controller
         $docentes = Docente::all();
         // Recuperar todas las asignaturas sin docente en el semestra actual
         $asignaturas = Asignatura::whereDoesntHave('cargasacademicas', function ($query) {
-        $query->whereHas('docente')->whereHas('semestre', function ($subquery) {$subquery->where('estado', 'activo');});})
-        ->where('escuela', '!=', 'INFORMATICA')->get();
+        $query->whereHas('docente')->whereHas('semestre', function ($subquery) {$subquery->where('estado', 'activo');});})->get();
         // Recuperar todos los semestres activos
         $semestres = Semestre::where('estado', 'Activo')->get();
         return view('admins.carga_academicas.create',compact('docentes', 'asignaturas', 'semestres'));

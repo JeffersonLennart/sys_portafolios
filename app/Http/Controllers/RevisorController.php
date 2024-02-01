@@ -6,8 +6,11 @@ use App\Models\Revisor;
 use App\Http\Requests\StoreRevisorRequest;
 use App\Http\Requests\UpdateRevisorRequest;
 use App\Models\Docente;
+use App\Models\Portafolio;
+use App\Models\Revision;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class RevisorController extends Controller
 {
@@ -114,10 +117,20 @@ class RevisorController extends Controller
     // Función para revisar potafolios que le corresponden
     public function revisarPortafolios(){
 
+      #obtenemos todos los portafolios que le corresponden al revisor
+      $revisorId = Auth::user()->id;
+      $portafolios = Portafolio::whereHas('cargaAcademica.docente.DocenteRevisor', function ($query) use ($revisorId) {$query->where('revisor_id', $revisorId);})->doesntHave('revisiones')->get();
+      return view('revisores.portafolios.index',compact('portafolios'));
+
     }
 
     // Función para mostrar historial de revisiones
     public function historialRevisiones(){
+      
+      #obtenemos todas las revisiones que hizo en actual revisor
+      $revisorId = Auth::user()->id;
+      $revisiones = Revision::where("revisor_id", $revisorId)->get();
+      return view('revisores.revisiones.index',compact('revisiones'));
 
     }
 }

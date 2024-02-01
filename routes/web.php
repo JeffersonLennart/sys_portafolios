@@ -79,6 +79,19 @@ Route::middleware(['auth','role:Revisor'])->group(function () {
 
     // Ruta para mostrar el historial de revisiones 
     Route::get('revisores/historial_revisiones', [RevisorController::class, 'historialRevisiones'])->name('revisores.historialRevisiones');
+
+    // Ruta para realizar mostrar panel de revision
+    Route::get('revisores/portafolios/{portafolio}/revisar', [RevisionController::class, 'RevisionCreate'])->name('revisiones.RevisionCreate');
+
+    // Ruta para guardar la revision
+    Route::post('revisores/revisiones', [RevisionController::class, 'RevisionStore'])->name('revisiones.RevisionStore');
+
+    // Ruta para mostrar una revision en el historial de revisiones
+    Route::get('revisores/revisiones/{revisione}', [RevisionController::class, 'RevisionShow'])->name('revisiones.RevisionShow');
+
+    // Ruta para mostrar un portafolio en el revisar portafolios
+    Route::get('revisores/portafolios/{portafolio}', [PortafolioController::class, 'PortafolioShow'])->name('portafolios.PortafolioShow');
+
 });
 
 

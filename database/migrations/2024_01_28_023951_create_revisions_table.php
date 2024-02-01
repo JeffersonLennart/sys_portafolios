@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('revisor_id')->nullable();            
             $table->enum('numero_revision', [1, 2, 3])->notNullable();
             $table->date('fecha_revision');
+            $table->boolean('con_informe');  
             $table->text('observaciones')->nullable();
 
             $table->foreign('portafolio_id')->references('id')->on('portafolios')->onDelete('cascade');

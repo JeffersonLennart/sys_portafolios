@@ -106,7 +106,7 @@ class AsignaturaFactory extends Factory
 
         return [
             'nombre' => $this->faker->unique()->randomElement($nombres),
-            'tipo' => $this->faker->randomElement(['teorica', 'teorica_practica', 'practica']),
+            'tipo' => $this->faker->randomElement(['Teórico', 'Teórico-Práctico', 'Práctico']),
             'codigo' => 'IF' . $this->faker->unique()->numberBetween(100, 999) . strtoupper($this->faker->unique()->lexify('???')),
             'escuela' => $this->faker->randomElement($escuelas),
             'categoria' => $this->faker->randomElement($categorias),

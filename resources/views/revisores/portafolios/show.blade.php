@@ -27,7 +27,7 @@
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('portafolios.index') }}">Volver</a>
+                <a class="btn btn-secondary" href="{{ route('revisores.revisarPortafolios') }}">Volver</a>
             </div>
 
         </div>

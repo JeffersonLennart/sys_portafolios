@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Ver Semestre')
+@section('title', 'Ver Informe')
 
 @section('content_header')
-  <h1 class="text-center"><b>Datos del Semestre</b></h1>
+  <h1 class="text-center"><b>Datos del Informe</b></h1>
 @stop
 
 @section('content')
@@ -13,25 +13,26 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Fecha Inicio</th>
-                        <th>Fecha Fin</th>                
-                        <th>Estado</th>                                                        
+                        <th>Revision ID</th>
+                        <th>Revisor ID</th>
+                        <th>Fecha del Informe</th>                
+                        <th>Cumplimiento</th>                                   
+                        <th>Acciones</th>                                                       
                     </tr>
                 </thead>
                 <tbody>                    
                         <tr>
-                            <td>{{ $semestre->id }}</td>
-                            <td>{{ $semestre->nombre }}</td>
-                            <td>{{ $semestre->fecha_inicio }}</td>
-                            <td>{{ $semestre->fecha_fin }}</td>                                     
-                            <td>{{ $semestre->estado }}</td>                                     
+                            <td>{{ $informe->id }}</td>
+                            <td>{{ $informe->revision_id }}</td>
+                            <td>{{ $informe->revisor_id }}</td>
+                            <td>{{ $informe->fecha_informe }}</td>
+                            <td>{{ $informe->cumplimiento }}</td>                                     
                         </tr>                    
                 </tbody>
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('semestres.index') }}">Volver</a>
+                <a class="btn btn-secondary" href="{{ route('informes.index') }}">Volver</a>
             </div>
 
         </div>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('carga_academica_id')->unique();
-            $table->enum('tipo_portafolio', ['teorico', 'practico'])->notNullable();
+            $table->enum('tipo_portafolio', ['Teórico', 'Práctico'])->notNullable();
 
             $table->foreign('carga_academica_id')->references('id')->on('carga_academicas')->onDelete('cascade');
 

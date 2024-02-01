@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Asignatura')
+@section('title', 'Revisiones')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Asignatura</b></h1>
+  <h1 class="text-center"><b>Registro de Revisiones</b></h1>
 @stop
 
 @section('content')
@@ -16,44 +16,36 @@
   </div>
 @endif
 
-<div class="card-header">
-  <a href="{{ route('asignaturas.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Asignatura</b></a>
-</div>
+
 
 <table id="tabla" class="table">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Nombre</th>
-            <th>Tipo</th>
-            <th>Codigo</th>                
-            <th>Escuela</th>                                   
-            <th>Categoria</th>        
-            <th>Creditos</th>  
-            <th>Acciones</th>        
+            <th>Docente</th>
+            <th>Revisor</th>
+            <th>Numero de revision</th>                
+            <th>Fecha de revision</th>  
+            <th>Observaciones</th>                                   
+            <th>Acciones</th>                
         </tr>
     </thead>
     <tbody>
-        @foreach ($asignaturas as $asignatura)
+        @foreach ($revisiones as $revision)
             <tr>
-                <td>{{ $asignatura->id }}</td>
-                <td>{{ $asignatura->nombre }}</td>
-                <td>{{ $asignatura->tipo }}</td>
-                <td>{{ $asignatura->codigo }}</td>
-                <td>{{ $asignatura->escuela }}</td>     
-                <td>{{ $asignatura->categoria }}</td>
-                <td>{{ $asignatura->creditos }}</td>      
+                <td>{{ $revision->id }}</td>
+                <td>{{ $revision->portafolio->cargaAcademica->docente->user->name }}</td>
+                <td>{{ $revision->revisor->user->name }}</td>
+                <td>{{ $revision->numero_revision }}</td>
+                <td>{{ $revision->fecha_revision }}</td>
+                <td>{{ $revision->observaciones }}</td>            
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('asignaturas.show', $asignatura) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('asignaturas.edit', $asignatura) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('asignaturas.destroy', $asignatura) }}">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                      </form>
+                    <a href="{{ route('revisiones.RevisionShow', $revision) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
                   </div>
-                </td>           
+                </td>
+              
+                 
             </tr>
         @endforeach
     </tbody>

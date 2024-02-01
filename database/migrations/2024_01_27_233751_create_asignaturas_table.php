@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('asignaturas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 200);
-            $table->enum('tipo', ['teorica', 'teorica_practica', 'practica'])->notNullable();
+            $table->enum('tipo', ['Teórico', 'Teórico-Práctico', 'Práctico'])->notNullable();
             $table->string('codigo', 50);
             $table->string('escuela', 200);
-            $table->string('categoria', 10);
+            $table->string('categoria', 20);
             $table->integer('creditos');
             $table->timestamps();
         });

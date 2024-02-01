@@ -1,59 +1,59 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Semestre')
+@section('title', 'Editar Informe')
 
 @section('content_header')
-  <h1 class="text-center"><b>Editar Semestre</b></h1>
+  <h1 class="text-center"><b>Editar Informe</b></h1>
 @stop
 
 @section('content')
 
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('semestres.update', $semestre) }}" method="POST">
+        <form action="{{ route('informes.update', $informe) }}" method="POST">
             @csrf
             @method('PUT')
 
-           <!-- Nombre -->
+           <!-- Revision ID -->
            <div class="form-group row">
-            <label class="col-sm-1 col-form-label" for="nombre">Nombre:</label>
+            <label class="col-sm-1 col-form-label" for="revision_id">Revision ID:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre',$semestre->nombre) }}">
+                <input type="number" class="form-control" id="revision_id" name="revision_id" value="{{ old('revision_id',$informe->revision_id) }}">
             </div>
-            <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
+            <x-input-error :messages="$errors->get('revision_id')" class="mt-2" />
         </div>
 
-        <!-- Fecha Inicio -->
+        <!-- Revisor ID -->
         <div class="form-group row">
-            <label class="col-sm-1 col-form-label" for="fecha_inicio">Fecha de Inicio:</label>
+            <label class="col-sm-1 col-form-label" for="revisor_id">Revisor ID:</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" value="{{ old('fecha_inicio',$semestre->fecha_inicio) }}">
+                <input type="number" class="form-control" id="revisor_id" name="revisor_id" value="{{ old('revisor_id',$informe->revisor_id) }}">
             </div>
-            <x-input-error :messages="$errors->get('fecha_inicio')" class="mt-2" />
+            <x-input-error :messages="$errors->get('revisor_id')" class="mt-2" />
         </div>            
 
-        <!-- Fecha Fin -->
+        <!-- Fecha del Informe -->
         <div class="form-group row">
-            <label class="col-sm-1 col-form-label" for="fecha_fin">Fecha de Fin:</label>
+            <label class="col-sm-1 col-form-label" for="fecha_informe">Fecha del Informe:</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" value="{{ old('fecha_fin',$semestre->fecha_fin) }}">
+                <input type="date" class="form-control" id="fecha_informe" name="fecha_informe" value="{{ old('fecha_informe',$informe->fecha_informe) }}">
             </div>
-            <x-input-error :messages="$errors->get('fecha_fin')" class="mt-2" />
+            <x-input-error :messages="$errors->get('fecha_informe')" class="mt-2" />
         </div>            
 
-        <!-- Estado -->
+        <!-- Cumplimiento -->
         <div class="form-group row">
-            <label class="col-sm-1 col-form-label" for="estado">Estado:</label>
+            <label class="col-sm-1 col-form-label" for="cumplimiento">Cumplimiento:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="estado" name="estado" value="{{ old('estado',$semestre->estado) }}">
+                <input type="number" class="form-control" id="cumplimiento" name="cumplimiento" value="{{ old('cumplimiento',$informe->cumplimiento) }}">
             </div>
-            <x-input-error :messages="$errors->get('estado')" class="mt-2" />
+            <x-input-error :messages="$errors->get('cumplimiento')" class="mt-2" />
         </div>
 
 
             <div class="text-center" >                
-                <input type="submit" value="Editar Semestre" class="btn btn-primary">             
-                <a href="{{ route('semestres.index') }}" class="btn btn-secondary">Cancelar</a>
+                <input type="submit" value="Editar Informe" class="btn btn-primary">             
+                <a href="{{ route('informes.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

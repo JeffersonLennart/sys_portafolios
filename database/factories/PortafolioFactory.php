@@ -17,7 +17,7 @@ class PortafolioFactory extends Factory
     public function definition(): array
     {
         return [
-            'tipo_portafolio' => $this->faker->randomElement(['teorico', 'practico']),
+            'tipo_portafolio' => $this->faker->randomElement(['Teórico', 'Práctico']),
         ];
     }
 }

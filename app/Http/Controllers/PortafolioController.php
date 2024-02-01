@@ -93,7 +93,7 @@ class PortafolioController extends Controller
             'carga_academica_id' => $request->carga_academica_id,
             'tipo_portafolio' => $request->tipo_portafolio,             
         ]);
-        return redirect()->route('portafolios.index')->with('mensaje', 'El Portafolio '.$portafolio->id.' ha sido agregado con exito');
+        return redirect()->route('docentes.enviarPortafolio')->with('mensaje', 'El Portafolio '.$portafolio->id.' ha sido enviado con exito');
     }
 
 }

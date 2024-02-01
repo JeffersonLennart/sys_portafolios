@@ -27,9 +27,9 @@
                 <label class="col-sm-1 col-form-label" for="tipo">Tipo:</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="tipo" name="tipo">
-                        <option value="teorica" {{ old('tipo') == 'teorica' ? 'selected' : '' }}>Teorica</option>
-                        <option value="teorica_practica" {{ old('tipo') == 'teorica_practica' ? 'selected' : '' }}>Teorica Práctica</option>
-                        <option value="practica" {{ old('tipo') == 'practica' ? 'selected' : '' }}>Practica</option>
+                        <option value="Teórico" {{ old('tipo') == 'Teórico' ? 'selected' : '' }}>Teorica</option>
+                        <option value="Teórico-Práctico" {{ old('tipo') == 'Teórico-Práctico' ? 'selected' : '' }}>Teorica Práctica</option>
+                        <option value="Práctico" {{ old('tipo') == 'Práctico' ? 'selected' : '' }}>Practica</option>
                     </select>
                 </div>
                 <x-input-error :messages="$errors->get('tipo')" class="mt-2" />

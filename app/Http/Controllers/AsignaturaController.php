@@ -28,7 +28,7 @@ class AsignaturaController extends Controller
     }
 
     // Almacenar Asignatura
-    public function store(Request $request)
+    public function store(AsignaturaRequest $request)
     {        
         // Crear Asignatura 
         $asignatura = Asignatura::create([
@@ -58,7 +58,7 @@ class AsignaturaController extends Controller
     }
 
     // Para editar Asignatura
-    public function update(Request $request, Asignatura $asignatura)
+    public function update(AsignaturaRequest $request, Asignatura $asignatura)
     {
         $asignatura = Asignatura::find($asignatura->id);
         // Actualizar asignatura

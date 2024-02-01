@@ -11,7 +11,7 @@ class AsignaturaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class AsignaturaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre' => ['required', 'string', 'max:255'],
+            'tipo' => ['required', 'string', 'max:50'], 
+            'codigo' => ['required', 'string', 'max:20'], 
+            'escuela' => ['required', 'string', 'max:100'], 
+            'categoria' => ['required', 'string', 'max:50'], 
+            'creditos' => ['required', 'integer', 'min:2'],
         ];
     }
 }

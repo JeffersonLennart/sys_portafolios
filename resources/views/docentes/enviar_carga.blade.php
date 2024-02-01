@@ -37,7 +37,7 @@
             <div class="text-center" >     
                 <button type="submit" name="carga_academica_id" value="{{ $carga_academica->id }}"
                 class="btn btn-primary">Enviar Portafolio</button>                      
-                <a href="{{ route('portafolios.index') }}" class="btn btn-secondary">Cancelar</a>
+                <a href="{{ route('docentes.enviarPortafolio') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

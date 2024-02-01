@@ -33,7 +33,7 @@
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('docentes.cargaAcademica') }}">Volver</a>
+                <a class="btn btn-secondary" onclick="window.history.back()">Volver</a>
             </div>
 
         </div>

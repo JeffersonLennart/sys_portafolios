@@ -97,7 +97,7 @@ class PortafolioController extends Controller
         return redirect()->route('docentes.enviarPortafolio')->with('mensaje', 'El Portafolio '.$portafolio->id.' ha sido enviado con exito');
     }
 
-    }
+    
     
     // Mostrar datos de la Portafolio en revisor
     public function PortafolioShow(Portafolio $portafolio)

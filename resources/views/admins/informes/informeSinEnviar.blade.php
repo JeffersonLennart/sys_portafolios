@@ -16,10 +16,6 @@
   </div>
 @endif
 
-<div class="card-header">
-  <a href="{{ route('informes.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Informe</b></a>
-</div>
-
 <table id="tabla" class="table">
     <thead>
         <tr>
@@ -42,12 +38,6 @@
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
                     <a href="{{ route('informes.show', $informe) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('informes.edit', $informe) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('informes.destroy', $informe) }}">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                      </form>
                   </div>
                 </td>
               

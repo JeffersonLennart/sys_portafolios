@@ -99,4 +99,11 @@ class CargaAcademicaController extends Controller
         return back()->with('mensaje', 'La Carga Academica '.$carga_academica->id.' ha sido eliminada con exito');
     } 
 
+    public function docente_carga_show(CargaAcademica $carga_academica)
+    {
+      $carga_academica = CargaAcademica::find($carga_academica->id);
+
+      return view('docentes.carga_academicas.docente_carga_show', compact('carga_academica'));
+    }
+
 }

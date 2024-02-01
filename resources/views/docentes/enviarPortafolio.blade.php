@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Informes')
+@section('title', 'Carga Academica')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Informes Enviados</b></h1>
+  <h1 class="text-center"><b>Enviar Portafolio </b></h1>
 @stop
 
 @section('content')
@@ -19,35 +19,26 @@
 <table id="tabla" class="table">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Revisor ID</th>
-            <th>Revisor</th>
-            <th>Asignatura</th>
-            <th>Fecha del Informe</th>                
-            <th>Cumplimiento</th>                                   
+            <th>ID</th>
+            <th>Docente</th>
+            <th>Asignatura</th>  
+            <th>Semestre</th>                                
             <th>Acciones</th>                
         </tr>
     </thead>
     <tbody>
-        @foreach ($informes as $informe)
+        @foreach ($cargas_academicas as $carga_academica)
             <tr>
-                <td>{{ $informe->id }}</td>
-                <td>{{ $informe->revisor_id }}</td>
-                <td>{{ $informe->revisor->user->name }}</td>
-                <td>{{ $informe->revision->portafolio->cargaAcademica->asignatura->nombre }}</td>
-                <td>{{ $informe->fecha_informe }}</td>
-                <td>{{ $informe->cumplimiento }}</td>           
+                <td>{{ $carga_academica->id }}</td>
+                <td>{{ $carga_academica->docente->user->name }}</td>
+                <td>{{ $carga_academica->asignatura->nombre}}</td>  
+                <td>{{ $carga_academica->semestre->nombre}}</td>       
                 <td>
-                  <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('informes.show', $informe) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                      <form method="POST" action="{{ route('informes.destroy', $informe) }}">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                      </form>
-                  </div>
+                <div class="btn-group" role="group" aria-label="Acciones">
+                    <a href="{{ route('portafolios.enviar_carga', $carga_academica) }}" class="btn btn-primary mr-2 btn-sm">Enviar</a>
+                    <a href="{{ route('carga_academicas.docente_carga_show', $carga_academica) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                </div>
                 </td>
-              
                  
             </tr>
         @endforeach

@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Informes')
+@section('title', 'Portafolios')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Informes Enviados</b></h1>
+  <h1 class="text-center"><b>Portafolios Revisados</b></h1>
 @stop
 
 @section('content')
@@ -20,31 +20,22 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Revisor ID</th>
-            <th>Revisor</th>
-            <th>Asignatura</th>
-            <th>Fecha del Informe</th>                
-            <th>Cumplimiento</th>                                   
+            <th>Carga Academica ID</th>
+            <th>Docente</th>
+            <th>Tipo de Portafolio</th>                                  
             <th>Acciones</th>                
         </tr>
     </thead>
     <tbody>
-        @foreach ($informes as $informe)
+        @foreach ($portafolios as $portafolio)
             <tr>
-                <td>{{ $informe->id }}</td>
-                <td>{{ $informe->revisor_id }}</td>
-                <td>{{ $informe->revisor->user->name }}</td>
-                <td>{{ $informe->revision->portafolio->cargaAcademica->asignatura->nombre }}</td>
-                <td>{{ $informe->fecha_informe }}</td>
-                <td>{{ $informe->cumplimiento }}</td>           
+                <td>{{ $portafolio->id }}</td>
+                <td>{{ $portafolio->carga_academica_id }}</td>
+                <td>{{ $portafolio->cargaAcademica->docente->user->name }}</td>
+                <td>{{ $portafolio->tipo_portafolio }}</td>        
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('informes.show', $informe) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                      <form method="POST" action="{{ route('informes.destroy', $informe) }}">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                      </form>
+                    <a href="{{ route('portafolios.portafolio_revisado_show', $portafolio) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
                   </div>
                 </td>
               
@@ -53,8 +44,6 @@
         @endforeach
     </tbody>
 </table>
-
-
 
 
   

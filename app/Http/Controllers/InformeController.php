@@ -6,6 +6,7 @@ use App\Http\Requests\InformeRequest;
 use App\Models\Informe;
 use App\Models\Revisor;
 use App\Models\Docente;
+use App\Models\Revision;
 use Illuminate\Http\Request;
 
 class InformeController extends Controller
@@ -21,7 +22,7 @@ class InformeController extends Controller
     // Mostrar Informes
     public function index()
     {
-        $informes = Informe::where('cumplimiento', 1)->get();
+        $informes = Informe::all();
         return view('admins.informes.index',compact('informes'));
     }
 

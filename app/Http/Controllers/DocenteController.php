@@ -6,6 +6,8 @@ use App\Models\Docente;
 use App\Http\Requests\StoreDocenteRequest;
 use App\Http\Requests\UpdateDocenteRequest;
 use App\Models\User;
+use App\Models\CargaAcademica;
+use App\Models\Portafolio;
 use Illuminate\Support\Facades\Hash;
 
 class DocenteController extends Controller
@@ -108,19 +110,26 @@ class DocenteController extends Controller
 
     // Función para mostrar carga academica del docente
     public function cargaAcademica(){
-
+        $docente_id = auth()->user()->id;
+        $cargas_academicas = CargaAcademica::where('docente_id', $docente_id)->get();
+        return view('docentes.cargaAcademica',compact('cargas_academicas'));
     }
-
 
     // Función para enviar un portafolio (debe seleccionar de que carga academica desea enviar el portafolio)
     public function enviarPortafolio(){
-
+        $docente_id = auth()->user()->id;
+        $cargas_academicas = CargaAcademica::where('docente_id', $docente_id)
+                            ->whereNotIn('id', function($query) {
+                                $query->select('carga_academica_id')->from('portafolios');
+                            })
+                            ->get();
+        return view('docentes.enviarPortafolio',compact('cargas_academicas'));
     }
 
     // Función para mostrar los portafolios revisados
     public function portafoliosRevisados(){
-
+        $docente_id = auth()->user()->id;
+        $portafolios = Portafolio::whereHas('cargaAcademica', function ($query) use ($docente_id) {$query->where('docente_id', $docente_id);})->whereHas('revisiones')->get();
+        return view('docentes.portafoliosRevisados',compact('portafolios'));
     }
-
-
 }

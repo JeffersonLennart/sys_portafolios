@@ -35,7 +35,7 @@
             </table>
 
             <div class="text-center mt-2">
-                <a class="btn btn-secondary" href="{{ route('revisiones.index') }}">Volver</a>
+                <a class="btn btn-secondary" href="{{ route('revisores.historialRevisiones') }}">Volver</a>
             </div>
 
         </div>

@@ -12,7 +12,12 @@ class Revision extends Model
     protected $table = 'revisions';
 
     protected $fillable = [
-        'observaciones',            
+        'portafolio_id',
+        'revisor_id',
+        'numero_revision',
+        'fecha_revision',
+        'con_informe',
+        'observaciones',
     ];
 
     // Relación uno a muchos con portafolios (inversa)

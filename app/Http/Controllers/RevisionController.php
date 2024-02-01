@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RevisionRequest;
 use App\Models\Revision;
 use Illuminate\Http\Request;
+use App\Models\Portafolio;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class RevisionController extends Controller
 {
@@ -26,7 +29,7 @@ class RevisionController extends Controller
     // Mostra la pagina de crear Revision
     public function create()
     {
-        
+
     }
 
     // Almacenar Revision
@@ -66,5 +69,43 @@ class RevisionController extends Controller
     {
         Revision::find($revisione->id)->delete();
         return back()->with('mensaje', 'La revision '.$revisione->id.' ha sido eliminada con exito'); 
-    } 
+    }
+
+     /*
+        *******************************************************************
+            FUNCIONES PARA EL CRUD DE REVISION EN EL PANEL DE REVISOR
+        *******************************************************************
+    */
+
+    // Mostra la pagina de Revisar Portafolio
+    public function RevisionCreate(Portafolio $portafolio)
+    {
+      $portafolio = Portafolio::find($portafolio->id);
+      return view('revisores.portafolios.revisar', compact('portafolio')); 
+    }
+
+    // Almacenar Revision 
+    public function RevisionStore(Request $request)
+    { 
+        $revisorId = Auth::user()->id;    
+        $portafolio = Portafolio::find($request->id);
+        $fechaActual = Carbon::now()->format('Y-m-d');
+        $revision = Revision::create([
+            'portafolio_id' => $portafolio->id,
+            'revisor_id' => $revisorId,
+            'numero_revision' => 1,
+            'fecha_revision' => $fechaActual,
+            'con_informe' => 0,
+            'observaciones' => $request->observaciones,            
+        ]);
+        return redirect()->route('revisores.revisarPortafolios')->with('mensaje', 'El Portafolio '.$portafolio->id.' ha sido revisado con exito');
+    }
+
+    // Mostrar datos de la Revision
+    public function RevisionShow(Revision $revisione)
+    {
+      $revisione = Revision::find($revisione->id);
+      return view('revisores.revisiones.show', compact('revisione'));
+    }
+
 }

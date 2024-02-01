@@ -24,4 +24,9 @@ class Docente extends Model
     public function cargasAcademicas(){
         return $this->hasMany('App\Models\CargaAcademica');
     }
+
+    // Relación muchos a muchos con revisor (inversa)
+    public function DocenteRevisor(){        
+        return $this->hasMany('App\Models\DocenteRevisor');
+    }
 }

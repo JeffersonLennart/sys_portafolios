@@ -16,9 +16,7 @@
   </div>
 @endif
 
-<div class="card-header">
-  <a href="{{ route('revisiones.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Revision</b></a>
-</div>
+
 
 <table id="tabla" class="table">
     <thead>

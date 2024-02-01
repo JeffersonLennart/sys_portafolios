@@ -6,6 +6,8 @@ use App\Http\Requests\InformeRequest;
 use App\Models\Informe;
 use App\Models\Revisor;
 use App\Models\Docente;
+use App\Models\Revision;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class InformeController extends Controller
@@ -21,7 +23,7 @@ class InformeController extends Controller
     // Mostrar Informes
     public function index()
     {
-        $informes = Informe::where('cumplimiento', 1)->get();
+        $informes = Informe::all();
         return view('admins.informes.index',compact('informes'));
     }
 
@@ -32,16 +34,24 @@ class InformeController extends Controller
     }
 
     // Almacenar Informe
-    public function store(Request $request)
+    public function store(Request $revisione)
     {        
+        $revisione = Revision::find($revisione->id);
+        $fechaActual = Carbon::now()->format('Y-m-d');
+        $cumplimiento = rand(0, 1) ? 1 : 0;
+        // Actualizar revision
+        $revisione->update([           
+            'con_informe' => 1,
+        ]);
+        //crear informe
         // Crear informe 
         $informe = Informe::create([
-            'revision_id' => $request->revision_id,
-            'revisor_id' => $request->revisor_id,   
-            'fecha_informe' => $request->fecha_informe,   
-            'cumplimiento' => $request->cumplimiento,             
+            'revision_id' => $revisione->id,
+            'revisor_id' => $revisione->revisor_id,   
+            'fecha_informe' => $fechaActual,   
+            'cumplimiento' => $cumplimiento,             
         ]);
-        return redirect()->route('informes.index')->with('mensaje', 'El Informe '.$informe->id.' ha sido agregado con exito');
+        return redirect()->route('admins.informeSinEnviar')->with('mensaje', 'El Informe '.$revisione->id.' ha sido revisado con exito');
     }
 
     // Mostrar datos de la Informe
@@ -83,7 +93,7 @@ class InformeController extends Controller
     // Función para mostrar la vista de informes sin enviar que tenga opción para enviar informe
     public function informeSinEnviar()
     {
-        $informes = Informe::where('cumplimiento', 0)->get();
-        return view('admins.informes.informeSinEnviar',compact('informes'));
+        $revisiones = Revision::where('con_informe', 0)->get();
+        return view('admins.informes.informeSinEnviar',compact('revisiones'));
     }
 }

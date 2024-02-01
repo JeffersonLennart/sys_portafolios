@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Semestres')
+@section('title', 'Carga Academica')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Semestres</b></h1>
+  <h1 class="text-center"><b>Registro de Cargas Academicas</b></h1>
 @stop
 
 @section('content')
@@ -17,33 +17,33 @@
 @endif
 
 <div class="card-header">
-  <a href="{{ route('semestres.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Semestre</b></a>
+  <a href="{{ route('carga_academicas.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Carga Academica</b></a>
 </div>
 
 <table id="tabla" class="table">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Fecha Inicio</th>
-            <th>Fecha Fin</th>                
-            <th>Estado</th>                                   
+            <th>ID</th>
+            <th>Docente</th>
+            <th>Asignatura</th>  
+            <th>Escuela</th> 
+            <th>Semestre</th>                              
             <th>Acciones</th>                
         </tr>
     </thead>
     <tbody>
-        @foreach ($semestres as $semestre)
+        @foreach ($cargas_academicas as $carga_academica)
             <tr>
-                <td>{{ $semestre->id }}</td>
-                <td>{{ $semestre->nombre }}</td>
-                <td>{{ $semestre->fecha_inicio }}</td>
-                <td>{{ $semestre->fecha_fin }}</td>
-                <td>{{ $semestre->estado }}</td>           
+                <td>{{ $carga_academica->id }}</td>
+                <td>{{ $carga_academica->docente->user->name }}</td>
+                <td>{{ $carga_academica->asignatura->nombre}}</td>
+                <td>{{ $carga_academica->asignatura->escuela}}</td>   
+                <td>{{ $carga_academica->semestre->nombre}}</td>       
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('semestres.show', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('semestres.edit', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('semestres.destroy', $semestre) }}">
+                    <a href="{{ route('carga_academicas.show', $carga_academica) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                    <a href="{{ route('carga_academicas.edit', $carga_academica) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
+                      <form method="POST" action="{{ route('carga_academicas.destroy', $carga_academica) }}">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

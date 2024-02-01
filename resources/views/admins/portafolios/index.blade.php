@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Semestres')
+@section('title', 'Portafolios')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Semestres</b></h1>
+  <h1 class="text-center"><b>Registro de Portafolios</b></h1>
 @stop
 
 @section('content')
@@ -17,33 +17,31 @@
 @endif
 
 <div class="card-header">
-  <a href="{{ route('semestres.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Semestre</b></a>
+  <a href="{{ route('portafolios.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Portafolio</b></a>
 </div>
 
 <table id="tabla" class="table">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Nombre</th>
-            <th>Fecha Inicio</th>
-            <th>Fecha Fin</th>                
-            <th>Estado</th>                                   
+            <th>Carga Academica ID</th>
+            <th>Docente</th>
+            <th>Tipo de Portafolio</th>                                  
             <th>Acciones</th>                
         </tr>
     </thead>
     <tbody>
-        @foreach ($semestres as $semestre)
+        @foreach ($portafolios as $portafolio)
             <tr>
-                <td>{{ $semestre->id }}</td>
-                <td>{{ $semestre->nombre }}</td>
-                <td>{{ $semestre->fecha_inicio }}</td>
-                <td>{{ $semestre->fecha_fin }}</td>
-                <td>{{ $semestre->estado }}</td>           
+                <td>{{ $portafolio->id }}</td>
+                <td>{{ $portafolio->carga_academica_id }}</td>
+                <td>{{ $portafolio->cargaAcademica->docente->user->name }}</td>
+                <td>{{ $portafolio->tipo_portafolio }}</td>        
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('semestres.show', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('semestres.edit', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('semestres.destroy', $semestre) }}">
+                    <a href="{{ route('portafolios.show', $portafolio) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                    <a href="{{ route('portafolios.edit', $portafolio) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
+                      <form method="POST" action="{{ route('portafolios.destroy', $portafolio) }}">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

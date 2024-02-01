@@ -1,58 +1,61 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Semestre')
+@section('title', 'Crear Carga Academica')
 
 @section('content_header')
-  <h1 class="text-center"><b>Agregar nuevo Semestre</b></h1>
+  <h1 class="text-center"><b>Agregar Carga Academica</b></h1>
 @stop
 
 @section('content')
 
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('semestres.store') }}" method="POST">
+        <form action="{{ route('carga_academicas.store') }}" method="POST">
             @csrf
 
-            <!-- Nombre -->
+            <!-- Docente -->
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="nombre">Nombre:</label>
+                <label class="col-sm-1 col-form-label" for="docente_id">Docente:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre') }}">
+                    <select id="docente_id" name="docente_id" class="form-control col-12" required>
+                        @foreach ( $docentes as $docente )
+                            <option value="{{ $docente->id }}" {{ old('docente_id') == $docente->id  ? 'selected' : '' }}>{{ $docente->user->name }}</option>                            
+                        @endforeach                        
+                    </select>
                 </div>
-                <x-input-error :messages="$errors->get('nombre')" class="mt-2" />
+                <x-input-error :messages="$errors->get('docente_id')" class="mt-2" />
             </div>
 
-            <!-- Fecha Inicio -->
+            <!-- Asignaturas -->
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="fecha_inicio">Fecha de Inicio:</label>
+                <label class="col-sm-1 col-form-label" for="revisor_id">Asignatura:</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" value="{{ old('fecha_inicio') }}">
+                    <select id="asignatura_id" name="asignatura_id" class="form-control col-12" required>
+                        @foreach ( $asignaturas as $asignatura )
+                            <option value="{{ $asignatura->id }}" {{ old('revisor_id') == $asignatura->id  ? 'selected' : '' }}>{{ $asignatura->nombre }}</option>                            
+                        @endforeach                        
+                    </select>
                 </div>
-                <x-input-error :messages="$errors->get('fecha_inicio')" class="mt-2" />
-            </div>            
+                <x-input-error :messages="$errors->get('revisor_id')" class="mt-2" />
+            </div>           
 
-            <!-- Fecha Fin -->
+            <!-- Semestre -->
             <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="fecha_fin">Fecha de Fin:</label>
+                <label class="col-sm-1 col-form-label" for="revisor_id">Semestre:</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" value="{{ old('fecha_fin') }}">
+                    <select id="semestre_id" name="semestre_id" class="form-control col-12" required>
+                        @foreach ( $semestres as $semestre )
+                            <option value="{{ $semestre->id }}" {{ old('semestre_id') == $semestre->id  ? 'selected' : '' }}>{{ $semestre->nombre }}</option>                            
+                        @endforeach                        
+                    </select>
                 </div>
-                <x-input-error :messages="$errors->get('fecha_fin')" class="mt-2" />
-            </div>            
-
-            <!-- Estado -->
-            <div class="form-group row">
-                <label class="col-sm-1 col-form-label" for="estado">Estado:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="estado" name="estado" value="{{ old('estado') }}">
-                </div>
-                <x-input-error :messages="$errors->get('estado')" class="mt-2" />
-            </div>
+                <x-input-error :messages="$errors->get('semestre_id')" class="mt-2" />
+            </div> 
                        
 
             <div class="text-center" >                
-                <input type="submit" value="Crear Semestre" class="btn btn-primary">             
-                <a href="{{ route('semestres.index') }}" class="btn btn-secondary">Cancelar</a>
+                <input type="submit" value="Crear Carga Academica" class="btn btn-primary">             
+                <a href="{{ route('carga_academicas.index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

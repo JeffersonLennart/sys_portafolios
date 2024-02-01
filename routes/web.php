@@ -59,6 +59,14 @@ Route::middleware(['auth','role:Docente'])->group(function () {
 
     // Ruta para mostrar portafolios revisados
     Route::get('docentes/portafolios_revisados', [DocenteController::class, 'portafoliosRevisados'])->name('docentes.portafoliosRevisados');
+
+    // Ruta para mostrar caraga academica de docente
+    Route::get('docentes/docente_carga_show/{carga_academica}', [CargaAcademicaController::class, 'docente_carga_show'])->name('carga_academicas.docente_carga_show');
+    // Ruta para mostrar los portafolios revisados del docente
+    Route::get('docentes/portafolio_revisado_show/{portafolio}', [PortafolioController::class, 'portafolio_revisado_show'])->name('portafolios.portafolio_revisado_show');
+    // Ruta para enviar carga acadmica
+    Route::get('docentes/enviar_carga/{carga_academica}', [PortafolioController::class, 'enviar_carga'])->name('portafolios.enviar_carga');
+    Route::post('docentes/enviar_store', [PortafolioController::class, 'enviar_store'])->name('portafolios.enviar_store');
 });
 
 
@@ -79,6 +87,19 @@ Route::middleware(['auth','role:Revisor'])->group(function () {
 
     // Ruta para mostrar el historial de revisiones 
     Route::get('revisores/historial_revisiones', [RevisorController::class, 'historialRevisiones'])->name('revisores.historialRevisiones');
+
+    // Ruta para realizar mostrar panel de revision
+    Route::get('revisores/portafolios/{portafolio}/revisar', [RevisionController::class, 'RevisionCreate'])->name('revisiones.RevisionCreate');
+
+    // Ruta para guardar la revision
+    Route::post('revisores/revisiones', [RevisionController::class, 'RevisionStore'])->name('revisiones.RevisionStore');
+
+    // Ruta para mostrar una revision en el historial de revisiones
+    Route::get('revisores/revisiones/{revisione}', [RevisionController::class, 'RevisionShow'])->name('revisiones.RevisionShow');
+
+    // Ruta para mostrar un portafolio en el revisar portafolios
+    Route::get('revisores/portafolios/{portafolio}', [PortafolioController::class, 'PortafolioShow'])->name('portafolios.PortafolioShow');
+
 });
 
 

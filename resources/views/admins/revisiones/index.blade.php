@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Semestres')
+@section('title', 'Revisiones')
 @section('plugins.Datatables', true)
 
 @section('content_header')
-  <h1 class="text-center"><b>Registro de Semestres</b></h1>
+  <h1 class="text-center"><b>Registro de Revisiones</b></h1>
 @stop
 
 @section('content')
@@ -16,34 +16,34 @@
   </div>
 @endif
 
-<div class="card-header">
-  <a href="{{ route('semestres.create') }}" class="btn btn-primary btn-sm mb-2"><b>Agregar Semestre</b></a>
-</div>
+
 
 <table id="tabla" class="table">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Nombre</th>
-            <th>Fecha Inicio</th>
-            <th>Fecha Fin</th>                
-            <th>Estado</th>                                   
+            <th>Docente</th>
+            <th>Revisor</th>
+            <th>Numero de revision</th>                
+            <th>Fecha de revision</th>  
+            <th>Observaciones</th>                                   
             <th>Acciones</th>                
         </tr>
     </thead>
     <tbody>
-        @foreach ($semestres as $semestre)
+        @foreach ($revisiones as $revision)
             <tr>
-                <td>{{ $semestre->id }}</td>
-                <td>{{ $semestre->nombre }}</td>
-                <td>{{ $semestre->fecha_inicio }}</td>
-                <td>{{ $semestre->fecha_fin }}</td>
-                <td>{{ $semestre->estado }}</td>           
+                <td>{{ $revision->id }}</td>
+                <td>{{ $revision->portafolio->cargaAcademica->docente->user->name }}</td>
+                <td>{{ $revision->revisor->user->name }}</td>
+                <td>{{ $revision->numero_revision }}</td>
+                <td>{{ $revision->fecha_revision }}</td>
+                <td>{{ $revision->observaciones }}</td>            
                 <td>
                   <div class="btn-group" role="group" aria-label="Acciones">
-                    <a href="{{ route('semestres.show', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
-                    <a href="{{ route('semestres.edit', $semestre) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
-                      <form method="POST" action="{{ route('semestres.destroy', $semestre) }}">
+                    <a href="{{ route('revisiones.show', $revision) }}" class="btn btn-primary mr-2 btn-sm">Mostrar</a>
+                    <a href="{{ route('revisiones.edit', $revision) }}" class="btn btn-primary mr-2 btn-sm">Editar</a>
+                      <form method="POST" action="{{ route('revisiones.destroy', $revision) }}">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

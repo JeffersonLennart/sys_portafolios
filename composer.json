@@ -10,12 +10,12 @@
         "jeroennoten/laravel-adminlte": "^3.9",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8"
-    },
-    "require-dev": {
+        "laravel/tinker": "^2.8",
         "fakerphp/faker": "^1.9.1",
-        "laravel-lang/common": "^6.1",
-        "laravel/breeze": "^1.27",
+        "laravel/breeze": "^1.27"
+    },
+    "require-dev": {        
+        "laravel-lang/common": "^6.1",        
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",

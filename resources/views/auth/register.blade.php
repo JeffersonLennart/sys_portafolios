@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout title="Registrarse">
     <form method="POST" action="{{ route('register') }}">
         @csrf
 

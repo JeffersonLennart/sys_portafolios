@@ -1,74 +1,18 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Proyecto Semestral del Curso de Ingeniería de Software I 
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Descripción del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+El Proceso de revisión de portafolios docentes en el Departamento Academico de Ingenieria Informatica (DAII) de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC) desempeña un papel crucial en el marco de la acreditación establecido por la comisión de Acreditación ICACIT. En cumplimiento del criterio 6 referente al (CUERPO DE PROFESORES) se requiere la evaluación detallada de los portafolios presentados por los docentes cada semestre. Estos portafolios estructurados en dos formatos específicos para asignaturas teóricas y prácticas, contiene la experiencia académica y la contribución del docente.
+El Presente trabajo propone el desarrollo de un Sistema de Información web que optimice y sistematice este proceso, el sistema se presenta como un aliado estratégico para el departamento simplificando la presentación de portafolios, coordinando las revisiones y generando informes detallados sobre el desempeño de los docentes, mediante este sistema no solo se busca agilizar los procedimientos administrativos sino también mejorar la calidad en las revisiones de portafolios.
+El Sistema abordará aspectos esenciales del proceso como la gestión de usuario, la programación de revisiones semestrales, la evaluación de portafolios y la generación de informes finales, diseñando una estructura modular y eficiente, empleando tecnologías modernas y framework web que permita una implementación sólida y escalable, con el fin de brindar una solución que contribuya al departamento académico DAII de la UNSAAC.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## Proyecto
-
-Descripcion del proyecto
 
 ## Integrantes
 
 Sistema desarrollado por:
-- Campos Segovia Jefferson Lennart		
+- Campos Segovia Jefferson Lennart (Responsable del Grupo)
 - Ccasani Huaman Wilman                      
 - Ccala Huamani Cristhian				
 - Cespedes Vilca Angel Luis                    
@@ -79,48 +23,52 @@ Sistema desarrollado por:
 - Quispe Quispe Jhon Alberth                            
 - Valencia Ñaupa Marko Leonel 
 
-## Diagramas
+## Requerimientos funcionales del sistema
 
-Requerimientos funcionales del sistema
+- **Autenticación:** Sistema de autenticación para docentes, revisores y administradores.
+- **Gestión de Docentes:** Registro, actualización y eliminación de información personal y académica de los docentes.
+- **Gestión de Portafolios:** Creación, actualización y eliminación de portafolios
+- **Gestión de Carga Académica:** Registro, actualización y eliminación de la carga académica de cada docente para cada semestre, visualización clara de la carga académica actual para cada docente y para el departamento en general.
+- **Revisión de Portafolios:** Interfaz para los revisores para evaluar los portafolios asignados, registro de observaciones y faltas encontradas durante la revisión, notificación a los docentes sobre los resultados de la revisión.
+- **Generación de Informes:** Creación de informes automáticos al finalizar cada revisión.
+- **Notificaciones:** Sistema de notificaciones para alertar sobre fechas importantes y resultados de revisiones.
 
-- Autenticación: Sistema de autenticación para docentes, revisores y administradores.
-- Gestión de Docentes: Registro, actualización y eliminación de información personal y académica de los docentes.
-- Gestión de Portafolios: Creación, actualización y eliminación de portafolios
-- Gestión de Carga Académica: Registro, actualización y eliminación de la carga académica de cada docente para cada semestre, visualización clara de la carga     
-  académica actual para cada docente y para el departamento en general.
-- Revisión de Portafolios: Interfaz para los revisores para evaluar los portafolios asignados, registro de observaciones y faltas encontradas durante la revisión, 
-  notificación a los docentes sobre los resultados de la revisión.
+## Arquitectura funcional del sistema 
 
-Arquitectura funcional del sistema 
+- **Módulo de Autenticación y Autorización:** Gestiona el registro de autenticación y autorización de usuario, define roles y permisos correspondientes.
+- **Módulo Registro de Docentes:** Accesible para Administrador(presidente) interactúa con la base de datos para almacenar la información del docente.
+- **Módulo de Actualización de Docentes:** Permite la modificación de la información de los docentes, requiere autenticación y permisos de actualización.
+- **Módulo de Eliminación de Docente:** Permite la eliminación de registros de docentes, requiere autenticación y permisos de eliminación.
+- **Módulo Creación de Portafolios:** Accesible para docentes, permite la creación de nuevos portafolios asociados a asignaturas.
+- **Módulo Actualización de Portafolios:** Permite a los docentes actualizar la información en los portafolios existentes.
+- **Módulo Eliminación de Portafolios:** Permite a los docentes eliminar portafolios no deseados.
+- **Módulo Registro Carga Académica:** Accesible para el Administrador(presidente), registrar la carga académica de los docentes para el semestre.
+- **Modulo Actualizacion Carga Académica:** Permite la modificación de la carga académica asignada a los docentes.
+- **Módulo Eliminación Carga Académica:** Permite la eliminación de registros de carga académica.
+- **Módulo Visualización de Carga Académica:** Permite a los docentes y al administrador visualizar la carga académica asignada.
+- **Modulo de Evaluacion de Carga Académica:** Accesible para los revisores asignados, permite a los revisores evaluar su cumplimiento con los portafolios.
+- **Módulo de Registro de Observaciones:** Permite a los revisores registrar observaciones sobre los portafolios.
+- **Módulo para la Generación de Informes:** Accesible para el Administrador(Presidente), genera informes basados en los resultados de las revisiones.
 
-- Módulo de Autenticación y Autorización: Gestiona el registro de autenticación y autorización de usuario, define roles y permisos correspondientes.
-- Módulo Registro de Docentes: Accesible para Administrador(presidente) interactúa con la base de datos para almacenar la información del docente.
-- Módulo de Actualización de Docentes: Permite la modificación de la información de los docentes, requiere autenticación y permisos de actualización.
-- Módulo de Eliminación de Docente: Permite la eliminación de registros de docentes, requiere autenticación y permisos de eliminación.
-- Módulo Creación de Portafolios: Accesible para docentes, permite la creación de nuevos portafolios asociados a asignaturas.
-- Módulo Actualización de Portafolios: Permite a los docentes actualizar la información en los portafolios existentes.
-- Módulo Eliminación de Portafolios: Permite a los docentes eliminar portafolios no deseados.
-- Módulo Registro Carga Académica:Accesible para el Administrador(presidente), registrar la carga académica de los docentes para el semestre.
-- Modulo Actualizacion Carga Académica: Permite la modificación de la carga académica asignada a los docentes.
-- Módulo Eliminación Carga Académica: Permite la eliminación de registros de carga académica.
-- Módulo Visualización de Carga Académica: Permite a los docentes y al administrador visualizar la carga académica asignada.
-- Modulo de Evaluacion de Carga Académica: Accesible para los revisores asignados, permite a los revisores evaluar su cumplimiento con los portafolios.
-- Módulo de Registro de Observaciones: Permite a los revisores registrar observaciones sobre los portafolios.
-- Módulo para la Generación de Informes: Accesible para el Administrador(Presidente), genera informes basados en los resultados de las revisiones.
+## Arquitectura Tecnica del sistema
 
-Arquitectura Tecnica del sistema
-
-Capa de presentación:
+### Capa de presentación:
 - Presentación de portafolios y resultados de revisiones.
 - Formularios de carga y actualización de portafolios.
 - Comunicación con el back-end a través de servicios web RESTful.
-Capa de Lógica:
+### Capa de Lógica:
 - Gestión de usuarios, docentes y revisiones.
 - Lógica de negocios relacionada con la carga de portafolios y evaluación.
-Capa de Datos:
+### Capa de Datos:
 - Modelo de base de datos relacional para almacenar información de docentes, portafolios y revisiones
 
-## Estructura de la Base de Datos
+## Diseño de la base de datos
+
+### Diagrama
+
+![Ejemplo de imagen](/public/images/readme/bd.jpg)
+
+### Código en MySQL
 
 ```sql
 -- Tabla de Usuarios (users)
@@ -251,7 +199,3 @@ CREATE TABLE informes (
     FOREIGN KEY (presidente_id) REFERENCES revisores(id)
 );
 ```
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
